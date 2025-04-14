@@ -24,7 +24,6 @@
       width: 100%;
     }
     .menu {
-      z-index: 1;
       left: 0;
       top: 0;
       position: fixed;
@@ -60,22 +59,22 @@
     }
 
     .listinul {
-      width: 100%;
-      overflow: hidden;
-      max-height: 0;
-      left: 0;
-      font-size: 20px;
-      display: flex;
-      top: 80px;
+      margin-left: 10px;
+      margin-top: 30px;
+      z-index: 999;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       position: absolute;
-      background: violet;
-      margin-top: 50px;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      overflow: hidden;
+      transition: 0.3s ease;
     }
     .listinul.on {
-      display: flex;
-      transform: translateY(0);
-      pointer-events: auto;
-      max-height: 500px;
+      opacity: 1;
     }
 
     .listinul > div {
@@ -143,7 +142,6 @@
       left: 0;
       position: absolute;
       color: aliceblue;
-      z-index: 9999999;
       font-size: 50px;
     }
     .bg {
@@ -157,11 +155,7 @@
       z-index: 0;
     }
     .bg.on {
-      z-index: -99999;
       height: 300px;
-    }
-    section {
-      overflow: hidden;
     }
   </style>
   <body>
@@ -179,84 +173,62 @@
             <li>
               <a href="#">기업소개</a>
               <ul class="listinul">
-                <div>
-                  <li><a href="">About LX글라스</a></li>
-                  <li><a href="">사업 소개</a></li>
-                  <li><a href="">오시는 길</a></li>
-                </div>
-                <div>
-                  <li><a href="">VISION</a></li>
-                  <li><a href="">듀오라이트 클럽</a></li>
-                </div>
-                <div>
-                  <li><a href="">정도경영</a></li>
-                  <li><a href="">R&D</a></li>
-                </div>
-                <div>
-                  <li><a href="">IR정보</a></li>
-                  <li><a href="">ESG</a></li>
-                </div>
+                <li><a href="">About LX글라스</a></li>
+                <li><a href="">사업 소개</a></li>
+                <li><a href="">오시는 길</a></li>
+
+                <li><a href="">VISION</a></li>
+                <li><a href="">듀오라이트 클럽</a></li>
+
+                <li><a href="">정도경영</a></li>
+                <li><a href="">R&D</a></li>
+
+                <li><a href="">IR정보</a></li>
+                <li><a href="">ESG</a></li>
               </ul>
             </li>
             <li>
               <a href="#">제품소개</a>
               <ul class="listinul">
-                <div>
-                  <li><a href="">코팅유리</a></li>
-                  <li><a href="">자동차용유리</a></li>
-                </div>
-                <div>
-                  <li><a href="">원판유리</a></li>
-                  <li><a href="">단열스페이서</a></li>
-                </div>
-                <div>
-                  <li><a href="">가공유리</a></li>
-                  <li><a href="">용도별유리확인</a></li>
-                </div>
-                <div>
-                  <li><a href="">특수유리</a></li>
-                  <li><a href="">특수유리성능확인</a></li>
-                </div>
+                <li><a href="">코팅유리</a></li>
+                <li><a href="">자동차용유리</a></li>
+
+                <li><a href="">원판유리</a></li>
+                <li><a href="">단열스페이서</a></li>
+
+                <li><a href="">가공유리</a></li>
+                <li><a href="">용도별유리확인</a></li>
+
+                <li><a href="">특수유리</a></li>
               </ul>
             </li>
             <li>
               <a href="#">자료실</a>
               <ul class="listinul">
-                <div>
-                  <li><a href="">시공사례</a></li>
-                  <li><a href="">기술자료</a></li>
-                </div>
-                <div>
-                  <li><a href="">보도자료</a></li>
-                </div>
-                <div>
-                  <li><a href="">홍보영상</a></li>
-                </div>
-                <div>
-                  <li><a href="">기술지원</a></li>
-                </div>
+                <li><a href="">시공사례</a></li>
+                <li><a href="">기술자료</a></li>
+
+                <li><a href="">보도자료</a></li>
+
+                <li><a href="">홍보영상</a></li>
+
+                <li><a href="">기술지원</a></li>
               </ul>
             </li>
             <li>
               <a href="#">인재채용</a>
               <ul class="listinul">
-                <div>
-                  <li><a href="">인사제도</a></li>
-                </div>
-                <div>
-                  <li><a href="">채용정보</a></li>
-                </div>
+                <li><a href="">인사제도</a></li>
+
+                <li><a href="">채용정보</a></li>
               </ul>
             </li>
             <li>
               <a href="#">고객지원</a>
               <ul class="listinul">
-                <div>
-                  <li><a href="">대리점안내</a></li>
-                </div>
-                <div>
-                  <li><a href="">문의하기</a></li>
-                </div>
+                <li><a href="">대리점안내</a></li>
+
+                <li><a href="">문의하기</a></li>
               </ul>
             </li>
           </ul>
@@ -307,58 +279,52 @@
         </div>
       </section>
     </div>
+
     <script>
-      const menu = document.querySelector(".menu");
       const menuItems = document.querySelectorAll(".listin > li");
       const submenus = document.querySelectorAll(".listinul");
       const bg = document.querySelector(".bg");
-
-      let closeTimer = null;
 
       menuItems.forEach((item) => {
         const submenu = item.querySelector(".listinul");
 
         item.addEventListener("mouseenter", () => {
-          clearTimeout(closeTimer);
           submenus.forEach((ul) => ul.classList.remove("on"));
-          if (submenu) submenu.classList.add("on");
+
+          submenu.classList.add("on");
+
           bg.classList.add("on");
         });
-      });
 
-      [menu, bg].forEach((area) => {
-        area.addEventListener("mouseleave", () => {
-          closeTimer = setTimeout(() => {
-            submenus.forEach((ul) => ul.classList.remove("on"));
-            bg.classList.remove("on");
-          }, 100);
-        });
-
-        area.addEventListener("mouseenter", () => {
-          clearTimeout(closeTimer);
+        item.addEventListener("mouseleave", () => {
+          submenu.classList.remove("on");
+          bg.classList.remove("on");
         });
       });
 
-      let currentIndex = 0;
-      const slideWidth = 100;
+      document.querySelector(".menu").addEventListener("mouseleave", () => {
+        submenus.forEach((ul) => ul.classList.remove("on"));
+        bg.classList.remove("on");
+      });
+
       const slides = document.querySelector(".banner");
       const totalSlides = document.querySelectorAll(".banner p").length;
+      let currentIndex = 0;
 
       function goToSlide(index) {
         slides.style.transition = "transform 0.5s ease";
-        slides.style.transform = `translateX(-${slideWidth * index}vw)`;
+        slides.style.transform = `translateX(-${100 * index}vw)`;
       }
 
       function resetToStart() {
         slides.style.transition = "none";
-        slides.style.transform = `translateX(0px)`;
+        slides.style.transform = `translateX(0vw)`;
         currentIndex = 0;
       }
 
       setInterval(() => {
         currentIndex++;
         goToSlide(currentIndex);
-
         if (currentIndex === totalSlides - 1) {
           setTimeout(resetToStart, 500);
         }
