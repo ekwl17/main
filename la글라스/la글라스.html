@@ -4,216 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title></head
-  ><style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-    }
-    a {
-      color: black;
-      text-decoration: none;
-    }
-    ul {
-      list-style: none;
-    }
-    .mein {
-      position: relative;
-      height: 100%;
-      width: 100%;
-    }
-    .menu {
-      left: 0;
-      top: 0;
-      position: fixed;
-      padding: 0 60px;
-      align-items: center;
-      background: rgb(255, 255, 198);
-      display: flex;
-      width: 100%;
-      height: 80px;
-    }
-    .list {
-      padding-right: 150px;
-      justify-content: right;
-      display: flex;
-      background: tomato;
-      height: 100%;
-      width: 100%;
-    }
-    .listin {
-      background: turquoise;
-      position: relative;
-      display: flex;
-    }
-    .listin > li {
-      padding: 0 30px;
-      word-break: keep-all;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      background: yellowgreen;
-      width: 100%;
-      height: 100%;
-    }
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-    .listinul {
-      z-index: 999;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      position: absolute;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .listinul.on {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-      visibility: visible;
-    }
-
-    .listinul > div {
-      gap: 20px;
-      height: 100%;
-      background: whitesmoke;
-      width: 180px;
-      display: flex;
-      flex-direction: column;
-    }
-    .right {
-      position: relative;
-      display: flex;
-    }
-    .right p {
-      position: relative;
-    }
-    .lang {
-      display: flex;
-      position: relative;
-      height: 100%;
-      font-size: 17px;
-      width: 100px;
-      margin-right: 50px;
-    }
-    .lang a {
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      height: 100%;
-      width: 100%;
-    }
-    #ko {
-      position: relative;
-    }
-    #ko::after {
-      display: block;
-      content: "";
-      width: 1px;
-      height: 80%;
-      background-color: #ddd;
-      position: absolute;
-      right: 0;
-    }
-    .banner {
-      position: relative;
-      z-index: -1;
-      transition: 0.3s;
-      display: flex;
-      overflow: hidden;
-      height: 100vh;
-      width: calc(100vw * 4);
-    }
-    .banner > div {
-      overflow: hidden;
-      position: relative;
-      height: 100%;
-      width: 100%;
-    }
-    .banner p {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
-    .bannertxt {
-      position: absolute;
-      bottom: 25vh;
-      left: 50px;
-      font-size: 50px;
-      color: white;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease;
-    }
-
-    .bannertxt.on {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .bg {
-      transition: opacity 0.3s ease;
-      position: absolute;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      height: 300px;
-      background: white;
-      z-index: 0;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .bg.on {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .bannersec {
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-    }
-    .banner2 {
-      overflow: hidden;
-      background: rgb(228, 255, 252);
-      height: 100vh;
-      width: 100vw;
-    }
-    .bg > div {
-      display: none;
-    }
-    .bg > div.on {
-      left: 60px;
-      width: auto;
-      height: 100%;
-      position: absolute;
-      background: yellow;
-      display: flex;
-    }
-    .bgimg {
-      align-items: center;
-      display: flex;
-      height: 100%;
-    }
-    .bgtxt {
-      align-items: center;
-      display: flex;
-      height: 100%;
-    }
-  </style>
   <body>
     <div class="main">
       <section class="menu">
@@ -296,7 +90,8 @@
                 />
               </p>
               <p class="bgtxt">
-                기업소개 세상을 이어주는 창, 그 시작을 LX글라스가 함께 합니다.
+                기업소개 세상을 이어주는 창,<br />
+                그 시작을 LX글라스가 함께 합니다.
               </p>
             </div>
             <div>
@@ -307,7 +102,8 @@
                 />
               </p>
               <p class="bgtxt">
-                기업소개 세상을 이어주는 창, 그 시작을 LX글라스가 함께 합니다.
+                기업소개 세상을 이어주는 창,<br />
+                그 시작을 LX글라스가 함께 합니다.
               </p>
             </div>
             <div>
@@ -318,7 +114,8 @@
                 />
               </p>
               <p class="bgtxt">
-                기업소개 세상을 이어주는 창, 그 시작을 LX글라스가 함께 합니다.
+                기업소개 세상을 이어주는 창,<br />
+                그 시작을 LX글라스가 함께 합니다.
               </p>
             </div>
             <div>
@@ -329,7 +126,8 @@
                 />
               </p>
               <p class="bgtxt">
-                기업소개 세상을 이어주는 창, 그 시작을 LX글라스가 함께 합니다.
+                기업소개 세상을 이어주는 창,<br />
+                그 시작을 LX글라스가 함께 합니다.
               </p>
             </div>
             <div>
@@ -340,7 +138,8 @@
                 />
               </p>
               <p class="bgtxt">
-                기업소개 세상을 이어주는 창, 그 시작을 LX글라스가 함께 합니다.
+                기업소개 세상을 이어주는 창,<br />
+                그 시작을 LX글라스가 함께 합니다.
               </p>
             </div>
           </div>
@@ -405,11 +204,62 @@
           </div>
         </div>
       </section>
-      <section class="banner2"></section>
+      <section class="banner2">
+        <div class="banner2tit">
+          <p>Business</p>
+          <h1>Company</h1>
+        </div>
+        <div class="banner2box">
+          <div>
+            <p>
+              <img
+                src="https://www.lxglas.co.kr/assets/front/images/main/main_business_img_01.png"
+                alt=""
+              />
+            </p>
+            <h1>Glass Business</h1>
+            <p class="banner2txt">
+              국내 최초로 로이유리를 개발하였고 고성능<br />
+              코팅유리, 가전용 유리 등 끊임없이 제품 개발을 <br />이어가고
+              있습니다.
+            </p>
+          </div>
+          <div>
+            <p>
+              <img
+                src="https://www.lxglas.co.kr/assets/front/images/main/main_business_img_02.png"
+                alt=""
+              />
+            </p>
+            <h1>Glass Business</h1>
+            <p class="banner2txt">
+              국내 최초로 로이유리를 개발하였고 고성능<br />
+              코팅유리, 가전용 유리 등 끊임없이 제품 개발을 <br />이어가고
+              있습니다.
+            </p>
+          </div>
+          <div>
+            <p>
+              <img
+                src="https://www.lxglas.co.kr/assets/front/images/main/main_business_img_03.png"
+                alt=""
+              />
+            </p>
+            <h1>Glass Business</h1>
+            <p class="banner2txt">
+              국내 최초로 로이유리를 개발하였고 고성능<br />
+              코팅유리, 가전용 유리 등 끊임없이 제품 개발을 <br />이어가고
+              있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="banner3"><div></div></section>
     </div>
 
     <script>
       // 메뉴 드롭다운 및 배경 이미지 관련
+      const menu = document.querySelector(".menu");
       const menuItems = document.querySelectorAll(".listin > li");
       const submenus = document.querySelectorAll(".listinul");
       const bg = document.querySelector(".bg");
@@ -417,46 +267,34 @@
 
       let closeTimer = null;
 
+      // 메뉴 전체에 마우스 진입 시 타이머 취소
+      menu.addEventListener("mouseenter", () => {
+        clearTimeout(closeTimer);
+      });
+
+      // 메뉴 전체 밖으로 나가면 메뉴 닫기
+      menu.addEventListener("mouseleave", () => {
+        closeTimer = setTimeout(() => {
+          submenus.forEach((ul) => ul.classList.remove("on"));
+          bg.classList.remove("on");
+          bgimgs.forEach((bgimg) => bgimg.classList.remove("on"));
+        }, 100);
+      });
+
+      // 각 메뉴 항목에 마우스 올렸을 때 배경, 서브메뉴 표시
       menuItems.forEach((item, index) => {
         const submenu = item.querySelector(".listinul");
 
         item.addEventListener("mouseenter", () => {
           clearTimeout(closeTimer);
-
-          // 모든 서브메뉴 닫기
           submenus.forEach((ul) => ul.classList.remove("on"));
           submenu.classList.add("on");
 
-          // 배경 보이기
           bg.classList.add("on");
-
-          // 모든 배경 이미지 끄기
           bgimgs.forEach((bgimg) => bgimg.classList.remove("on"));
-
-          // 해당 메뉴 인덱스에 맞는 배경 이미지 켜기
           if (bgimgs[index]) {
             bgimgs[index].classList.add("on");
           }
-        });
-
-        item.addEventListener("mouseleave", () => {
-          closeTimer = setTimeout(() => {
-            submenu.classList.remove("on");
-            bg.classList.remove("on");
-            bgimgs.forEach((bgimg) => bgimg.classList.remove("on"));
-          }, 100);
-        });
-
-        submenu.addEventListener("mouseenter", () => {
-          clearTimeout(closeTimer);
-        });
-
-        submenu.addEventListener("mouseleave", () => {
-          closeTimer = setTimeout(() => {
-            submenu.classList.remove("on");
-            bg.classList.remove("on");
-            bgimgs.forEach((bgimg) => bgimg.classList.remove("on"));
-          }, 100);
         });
       });
 
@@ -467,6 +305,7 @@
       let currentIndex = 0;
       let isTransitioning = false;
 
+      // 슬라이드 이동
       function goToSlide(index) {
         isTransitioning = true;
         slides.style.transition = "transform 0.5s ease";
@@ -484,6 +323,7 @@
         }, 500);
       }
 
+      // 슬라이드를 처음으로 즉시 이동
       function jumpToRealStart() {
         slides.style.transition = "none";
         slides.style.transform = `translateX(0vw)`;
@@ -497,10 +337,12 @@
         if (txt) txt.classList.add("on");
       }
 
+      // 페이지 로드 시 첫 슬라이드로
       window.addEventListener("load", () => {
         goToSlide(0);
       });
 
+      // 슬라이드 자동 재생
       setInterval(() => {
         if (isTransitioning) return;
 

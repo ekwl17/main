@@ -1,0 +1,282 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.mein {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.menu {
+  z-index: 9999999;
+  left: 0;
+  top: 0;
+  position: fixed;
+  padding: 0 60px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.76);
+  display: flex;
+  width: 100%;
+  height: 80px;
+}
+.list {
+  padding-right: 150px;
+  justify-content: right;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.listin {
+  position: relative;
+  display: flex;
+}
+.listin > li {
+  padding: 0 30px;
+  word-break: keep-all;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+.listin > li > a {
+  font-weight: 500;
+  color: black;
+}
+.listinul {
+  z-index: 999;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.listinul.on {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listinul > div {
+  gap: 20px;
+  height: 100%;
+  background: whitesmoke;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+.right {
+  position: relative;
+  display: flex;
+}
+.right p {
+  position: relative;
+}
+.lang {
+  display: flex;
+  position: relative;
+  height: 100%;
+  font-size: 17px;
+  width: 100px;
+  margin-right: 50px;
+}
+.lang a {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+#ko {
+  position: relative;
+}
+#ko::after {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 80%;
+  background-color: #ddd;
+  position: absolute;
+  right: 0;
+}
+.banner {
+  position: relative;
+  z-index: -1;
+  transition: 0.3s;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  width: calc(100vw * 4);
+}
+.banner > div {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.banner p {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.bannertxt {
+  font-weight: 600;
+  position: absolute;
+  bottom: 50vh;
+  left: 20vw;
+  font-size: 50px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.bannertxt.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bg {
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: white;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bg.on {
+  opacity: 1;
+}
+.bg.on > div {
+  pointer-events: auto;
+}
+
+.bannersec {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bg > div {
+  display: none;
+}
+.bg > div.on {
+  left: 60px;
+  width: auto;
+  height: 100%;
+  position: absolute;
+  gap: 28px;
+  display: flex;
+}
+.bgimg {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+.bgimg img {
+  border-radius: 0.5vw;
+}
+.bgtxt {
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+.banner2 {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+.banner2box {
+  padding-bottom: 1px;
+  width: 100%;
+  height: 79%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+.banner2box > div {
+  position: relative;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+.banner2tit {
+  font-size: 28px;
+  padding: 50px 0;
+  margin: 0 auto;
+  max-width: 55vw;
+  flex-direction: column;
+  display: flex;
+}
+.banner2box > div::after {
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 1px;
+  background: black;
+  position: absolute;
+}
+.banner2box > div:first-child:before {
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 1px;
+  background: black;
+  position: absolute;
+}
+.banner2txt {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.banner2txt ::after {
+  z-index: 99999;
+  border: 1px solid black;
+  width: 2.25rem;
+  height: 2.25rem;
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+  background: turquoise;
+}
+.banner3 {
+  background: yellowgreen;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
