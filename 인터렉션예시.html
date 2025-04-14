@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>자연스러운 단어 애니메이션</title>
+    <style>
+      body {
+        background: #f5f5f5;
+        font-family: "Segoe UI", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .word-box {
+        background: wheat;
+        height: 300px;
+        width: 300px;
+        cursor: pointer;
+        position: relative;
+        font-size: 32px;
+      }
+
+      .first-letter {
+        font-size: 80px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        display: inline-block;
+        transform-origin: left center;
+        transition: transform 0.5s ease-in-out, font-size 0.5s ease;
+      }
+      .first-letter.on {
+        transition: transform 0.5s ease-in-out, font-size 0.5s ease;
+        font-size: 50px;
+      }
+
+      .first-letter.on2 {
+        transform: translate(-80%, -50%);
+        transition-delay: 0.6s, 0s;
+      }
+      .rest-letters {
+        width: 0;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        display: inline-block;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
+
+      .word-box:hover .rest-letters {
+        transition: all 0.5s ease;
+        width: 100%;
+        transition-delay: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="word-box">
+      <span class="first-letter">H</span>
+      <span class="rest-letters">ello</span>
+    </div>
+    <script>
+      document.querySelector(".word-box").onmouseover = function () {
+        const el = document.querySelector(".first-letter");
+        el.classList.add("on");
+        el.classList.add("on2");
+      };
+      document.querySelector(".word-box").onmouseleave = function () {
+        const el = document.querySelector(".first-letter");
+        el.classList.remove("on2");
+        setTimeout(() => {
+          el.classList.remove("on");
+        }, 500);
+      };
+    </script>
+  </body>
+</html>
