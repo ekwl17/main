@@ -308,64 +308,61 @@
       </section>
     </div>
     <script>
-      //   const menu = document.querySelector(".menu");
-      //   const menuItems = document.querySelectorAll(".listin > li");
-      //   const submenus = document.querySelectorAll(".listinul");
-      //   const bg = document.querySelector(".bg");
+      const menu = document.querySelector(".menu");
+      const menuItems = document.querySelectorAll(".listin > li");
+      const submenus = document.querySelectorAll(".listinul");
+      const bg = document.querySelector(".bg");
 
-      //   let closeTimer = null;
+      let closeTimer = null;
 
-      //   // 1. li에 마우스를 올리면 해당 ul과 bg를 보여줌
-      //   menuItems.forEach((item) => {
-      //     const submenu = item.querySelector(".listinul");
+      menuItems.forEach((item) => {
+        const submenu = item.querySelector(".listinul");
 
-      //     item.addEventListener("mouseenter", () => {
-      //       clearTimeout(closeTimer);
-      //       submenus.forEach((ul) => ul.classList.remove("on"));
-      //       if (submenu) submenu.classList.add("on");
-      //       bg.classList.add("on");
-      //     });
-      //   });
+        item.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer);
+          submenus.forEach((ul) => ul.classList.remove("on"));
+          if (submenu) submenu.classList.add("on");
+          bg.classList.add("on");
+        });
+      });
 
-      //   // 2. .menu, .bg 둘 다 벗어났을 때만 닫기
-      //   [menu, bg].forEach((area) => {
-      //     area.addEventListener("mouseleave", () => {
-      //       closeTimer = setTimeout(() => {
-      //         submenus.forEach((ul) => ul.classList.remove("on"));
-      //         bg.classList.remove("on");
-      //       }, 100); // 약간 지연으로 부드럽게
-      //     });
+      [menu, bg].forEach((area) => {
+        area.addEventListener("mouseleave", () => {
+          closeTimer = setTimeout(() => {
+            submenus.forEach((ul) => ul.classList.remove("on"));
+            bg.classList.remove("on");
+          }, 100);
+        });
 
-      //     area.addEventListener("mouseenter", () => {
-      //       clearTimeout(closeTimer); // 마우스 다시 들어오면 닫힘 취소
-      //     });
-      //   });
+        area.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer);
+        });
+      });
 
-      //   let currentIndex = 0;
-      //   const slideWidth = 100;
-      //   const slides = document.querySelector(".banner");
-      //   const totalSlides = document.querySelectorAll(".banner p").length;
+      let currentIndex = 0;
+      const slideWidth = 100;
+      const slides = document.querySelector(".banner");
+      const totalSlides = document.querySelectorAll(".banner p").length;
 
-      //   function goToSlide(index) {
-      //     slides.style.transition = "transform 0.5s ease";
-      //     slides.style.transform = `translateX(-${slideWidth * index}vw)`;
-      //   }
+      function goToSlide(index) {
+        slides.style.transition = "transform 0.5s ease";
+        slides.style.transform = `translateX(-${slideWidth * index}vw)`;
+      }
 
-      //   function resetToStart() {
-      //     slides.style.transition = "none";
-      //     slides.style.transform = `translateX(0px)`;
-      //     currentIndex = 0;
-      //   }
+      function resetToStart() {
+        slides.style.transition = "none";
+        slides.style.transform = `translateX(0px)`;
+        currentIndex = 0;
+      }
 
-      //   setInterval(() => {
-      //     currentIndex++;
-      //     goToSlide(currentIndex);
+      setInterval(() => {
+        currentIndex++;
+        goToSlide(currentIndex);
 
-      //     if (currentIndex === totalSlides - 1) {
-      //       setTimeout(resetToStart, 500);
-      //     }
-      //   }, 3000);
-      //
+        if (currentIndex === totalSlides - 1) {
+          setTimeout(resetToStart, 500);
+        }
+      }, 3000);
     </script>
   </body>
 </html>
