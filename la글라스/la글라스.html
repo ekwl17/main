@@ -20,7 +20,7 @@
         </div>
         <div class="list">
           <ul class="listin">
-            <li>
+            <li class="listinli">
               <a href="#">기업소개</a>
               <ul class="listinul">
                 <li><a href="">About LX글라스</a></li>
@@ -37,7 +37,7 @@
                 <li><a href="">ESG</a></li>
               </ul>
             </li>
-            <li>
+            <li class="listinli">
               <a href="#">제품소개</a>
               <ul class="listinul">
                 <li><a href="">코팅유리</a></li>
@@ -52,7 +52,7 @@
                 <li><a href="">특수유리</a></li>
               </ul>
             </li>
-            <li>
+            <li class="listinli">
               <a href="#">자료실</a>
               <ul class="listinul">
                 <li><a href="">시공사례</a></li>
@@ -65,7 +65,7 @@
                 <li><a href="">기술지원</a></li>
               </ul>
             </li>
-            <li>
+            <li class="listinli">
               <a href="#">인재채용</a>
               <ul class="listinul">
                 <li><a href="">인사제도</a></li>
@@ -73,7 +73,7 @@
                 <li><a href="">채용정보</a></li>
               </ul>
             </li>
-            <li>
+            <li class="listinli">
               <a href="#">고객지원</a>
               <ul class="listinul">
                 <li><a href="">대리점안내</a></li>
@@ -159,7 +159,7 @@
       <section class="bannersec">
         <div class="banner">
           <div>
-            <p>
+            <p class="bannerimg">
               <img
                 src="https://www.lxglas.co.kr/assets/front/images/main/main_visual_img_03.jpg"
                 alt=""
@@ -171,31 +171,31 @@
             </p>
           </div>
           <div>
-            <p>
+            <p class="bannerimg">
               <img
                 src="https://www.lxglas.co.kr/assets/front/images/main/main_visual_img_01.jpg"
                 alt=""
               />
             </p>
             <p class="bannertxt">
-              주거용 더블로이유리 SKN176II<br />
-              같은 창, 다른 유리<br />프리미엄의 차이를 느끼다
+              세상을 이어주는 창,<br />
+              그 시작을 LX글라스가 함께합니다.
             </p>
           </div>
           <div>
-            <p>
+            <p class="bannerimg">
               <img
                 src="https://www.lxglas.co.kr/assets/front/images/main/main_visual_img_02.jpg"
                 alt=""
               />
             </p>
             <p class="bannertxt">
-              주거용 더블로이유리 SKN176II<br />
-              같은 창, 다른 유리<br />프리미엄의 차이를 느끼다
+              사람, 공간, 환경을<br />
+              새로운 미래로 연결합니다.
             </p>
           </div>
           <div>
-            <p>
+            <p class="bannerimg">
               <img
                 src="https://www.lxglas.co.kr/assets/front/images/main/main_visual_img_03.jpg"
                 alt=""
@@ -254,25 +254,22 @@
           </div>
         </div>
       </section>
-      <section class="banner3"><div></div></section>
+      <section class="banner3">div</section>
     </div>
 
     <script>
       // 메뉴 드롭다운 및 배경 이미지 관련
       const menu = document.querySelector(".menu");
-      const menuItems = document.querySelectorAll(".listin > li");
+      const menuItems = document.querySelectorAll(".listinli");
       const submenus = document.querySelectorAll(".listinul");
       const bg = document.querySelector(".bg");
       const bgimgs = document.querySelectorAll(".bg > div");
-
       let closeTimer = null;
 
-      // 메뉴 전체에 마우스 진입 시 타이머 취소
       menu.addEventListener("mouseenter", () => {
         clearTimeout(closeTimer);
       });
 
-      // 메뉴 전체 밖으로 나가면 메뉴 닫기
       menu.addEventListener("mouseleave", () => {
         closeTimer = setTimeout(() => {
           submenus.forEach((ul) => ul.classList.remove("on"));
@@ -281,7 +278,6 @@
         }, 100);
       });
 
-      // 각 메뉴 항목에 마우스 올렸을 때 배경, 서브메뉴 표시
       menuItems.forEach((item, index) => {
         const submenu = item.querySelector(".listinul");
 
@@ -298,17 +294,15 @@
         });
       });
 
-      // 슬라이드 관련
       const slides = document.querySelector(".banner");
       const slideItems = document.querySelectorAll(".banner > div");
       const totalSlides = slideItems.length;
       let currentIndex = 0;
       let isTransitioning = false;
 
-      // 슬라이드 이동
       function goToSlide(index) {
         isTransitioning = true;
-        slides.style.transition = "transform 0.5s ease";
+        slides.style.transition = "transform 1.3s ease";
         slides.style.transform = `translateX(-${100 * index}vw)`;
 
         document
@@ -320,10 +314,9 @@
           const txt = currentSlide.querySelector(".bannertxt");
           if (txt) txt.classList.add("on");
           isTransitioning = false;
-        }, 500);
+        }, 1300);
       }
 
-      // 슬라이드를 처음으로 즉시 이동
       function jumpToRealStart() {
         slides.style.transition = "none";
         slides.style.transform = `translateX(0vw)`;
@@ -337,12 +330,10 @@
         if (txt) txt.classList.add("on");
       }
 
-      // 페이지 로드 시 첫 슬라이드로
       window.addEventListener("load", () => {
         goToSlide(0);
       });
 
-      // 슬라이드 자동 재생
       setInterval(() => {
         if (isTransitioning) return;
 
@@ -352,9 +343,9 @@
         if (currentIndex === totalSlides - 1) {
           setTimeout(() => {
             jumpToRealStart();
-          }, 510);
+          }, 1300);
         }
-      }, 3000);
+      }, 4300);
     </script>
   </body>
 </html>
