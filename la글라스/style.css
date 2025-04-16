@@ -6,6 +6,8 @@
 }
 html,
 body {
+  overflow-y: scroll;
+  scrollbar-width: none;
   overflow-x: hidden;
 }
 a {
@@ -20,12 +22,43 @@ ul {
   height: 100%;
   width: 100%;
 }
+.rightmenu {
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+  font-family: Courier;
+  justify-content: center;
+  display: flex;
+  z-index: 9999999999;
+  right: 0;
+  top: 0;
+  position: fixed;
+  width: 75px;
+}
+.rm1 {
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  padding: 90px 0;
+  width: 100%;
+  background: rgb(168, 13, 13);
+}
+.rm2 {
+  padding: 30px 0;
+  text-align: center;
+  line-height: 1.3;
+  width: 100%;
+  background: rgb(122, 122, 122);
+}
+
 .menu {
   z-index: 9999999;
   left: 0;
   top: 0;
   position: fixed;
-  padding: 0 60px;
+  padding-right: 120px;
+  padding-left: 70px;
   align-items: center;
   background: rgba(255, 255, 255, 0.658);
   display: flex;
@@ -79,7 +112,7 @@ ul {
 }
 
 .listinli > a:hover::after {
-  width: 100%; /* 왼쪽 → 오른쪽으로 확장 */
+  width: 100%;
 }
 
 .listinul {
@@ -172,7 +205,7 @@ ul {
   position: absolute;
   bottom: 25vh;
   left: 20vw;
-  font-size: 50px;
+  font-size: 60px;
   color: white;
   opacity: 0;
   transform: translateY(20px);
@@ -243,19 +276,22 @@ ul {
   padding-bottom: 1px;
   width: 100%;
   height: 79%;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid rgb(177, 177, 177);
+  border-bottom: 1px solid rgb(177, 177, 177);
   justify-content: center;
   position: relative;
   display: flex;
 }
 .banner2box > div {
+  width: 20%;
   position: relative;
   padding: 30px;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   display: flex;
+}
+.banner2box > div h1 {
+  font-size: 35px;
+  padding: 20px 0;
 }
 .banner2tit {
   font-size: 28px;
@@ -266,41 +302,136 @@ ul {
   display: flex;
 }
 .banner2box > div::after {
+  top: 0;
   right: 0;
   content: "";
   height: 100%;
   width: 1px;
-  background: black;
+  background: rgb(177, 177, 177);
   position: absolute;
 }
 .banner2box > div:first-child:before {
   left: 0;
+  top: 0;
   content: "";
   height: 100%;
   width: 1px;
-  background: black;
+  background: rgb(177, 177, 177);
   position: absolute;
 }
 .banner2txt {
+  word-break: keep-all;
   height: 100%;
-  width: 100%;
   position: relative;
 }
-.banner2txt ::after {
-  z-index: 99999;
-  border: 1px solid black;
-  width: 2.25rem;
-  height: 2.25rem;
-  top: 0;
-  left: 0;
-  position: absolute;
+
+.banner2txt::after {
   content: "";
-  background: turquoise;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  bottom: 15vh;
 }
+
 .banner3 {
-  background: yellowgreen;
   position: relative;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+}
+.menutb {
+  flex-direction: column;
+  left: 10px;
+  position: absolute;
+  margin: 0 20px;
+  height: 30px;
+  width: 45px;
+  display: none;
+  justify-content: space-between;
+}
+.menutb div {
+  position: relative;
+  background: black;
+  height: 5px;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .listinli {
+    display: none;
+  }
+  .bannertxt {
+    bottom: 20vh;
+    left: 10vw;
+    font-size: 40px;
+  }
+  .menu {
+    background: white;
+  }
+  .menutb {
+    display: flex;
+  }
+  .logo {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .listinli {
+    display: none;
+  }
+  .bannertxt {
+    bottom: 20vh;
+    left: 10vw;
+    font-size: 23px;
+  }
+  .menu {
+    background: white;
+  }
+  .menutb {
+    display: flex;
+  }
+  .logo {
+    margin-left: 40px;
+  }
+  .rightmenu {
+    color: white;
+    position: fixed;
+    width: 55px;
+    top: 80px;
+  }
+  .rm1 {
+    line-height: 1;
+    font-size: 13px;
+    padding: 20px 0;
+    width: 100%;
+    font-weight: bold;
+    background: rgb(168, 13, 13);
+  }
+  .rm2 {
+    font-size: 12px;
+    padding: 13px 0;
+    text-align: center;
+    line-height: 1.3;
+    width: 100%;
+    background: rgb(122, 122, 122);
+  }
+  .right {
+    width: 100px;
+    right: 10px;
+    position: absolute;
+    display: flex;
+  }
+  .lang {
+    display: flex;
+    position: relative;
+    height: 100%;
+    font-size: 17px;
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .logo a img {
+    width: 120px;
+  }
 }
