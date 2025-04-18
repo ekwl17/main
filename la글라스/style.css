@@ -273,6 +273,7 @@ section {
   height: 100%;
 }
 .banner2 {
+  margin-top: 80px;
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -280,7 +281,7 @@ section {
 }
 .banner2in {
   margin: 0 auto;
-  max-width: 60vw;
+  max-width: 63vw;
   height: 100%;
 }
 .banner2box {
@@ -310,10 +311,20 @@ section {
 }
 
 .banner2box > div {
+  padding: 45px;
+  flex: 1;
   position: relative;
-  padding: 30px;
   flex-direction: column;
   display: flex;
+}
+.banner2boximg {
+  display: flex;
+  background: yellow;
+}
+.banner2boximg img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 .banner2box > div h1 {
   font-size: 35px;
@@ -323,7 +334,6 @@ section {
   font-size: 28px;
   padding: 90px 0 30px;
   margin: 0 auto;
-
   flex-direction: column;
   display: flex;
 }
@@ -360,11 +370,12 @@ section {
   bottom: 15vh;
 }
 .banner2bt {
-  bottom: 15vh;
-  right: 5vh;
+  bottom: 10vh;
+  right: 0;
   position: absolute;
 }
 .banner3 {
+  margin-top: 80px;
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -388,13 +399,28 @@ section {
 }
 .banner3tit {
   font-size: 28px;
-  padding: 90px 0 30px;
+  padding: 140px 0 30px;
   margin: 0 auto;
-  max-width: 55vw;
   flex-direction: column;
   display: flex;
 }
-
+.banner3box {
+  gap: 25px;
+  display: flex;
+  margin: 0 auto;
+  background: rgb(255, 255, 159);
+  height: 60%;
+  width: 100%;
+}
+.banner3box > div {
+  flex: 1;
+  background: rgb(255, 224, 255);
+}
+.banner3in {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 63vw;
+}
 @media (max-width: 1000px) {
   .listinli {
     display: none;
