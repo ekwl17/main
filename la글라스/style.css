@@ -399,27 +399,79 @@ section {
 }
 .banner3tit {
   font-size: 28px;
-  padding: 140px 0 30px;
-  margin: 0 auto;
-  flex-direction: column;
-  display: flex;
+  padding: 140px 0 80px;
 }
 .banner3box {
-  gap: 25px;
+  justify-content: space-between;
+  position: relative;
   display: flex;
-  margin: 0 auto;
-  background: rgb(255, 255, 159);
-  height: 60%;
-  width: 100%;
 }
 .banner3box > div {
-  flex: 1;
-  background: rgb(255, 224, 255);
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.banner3box > div:hover img {
+  transform: scale(1.3);
+}
+.banner3box > div img {
+  transition: 0.5s ease-in-out;
+  display: block;
 }
 .banner3in {
   margin: 0 auto;
   height: 100%;
   max-width: 63vw;
+}
+.banner3boxinbt {
+  justify-content: space-between;
+  padding: 40px 25px;
+  align-items: center;
+  display: flex;
+  height: 50px;
+  font-weight: 500;
+  width: 100%;
+  color: white;
+  top: 0;
+  font-size: 24px;
+  position: absolute;
+}
+.banner3boxinbt::after {
+  content: "";
+  position: relative;
+  width: 40px;
+  height: 40px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='none'%3E%3Crect width='36' height='36' rx='18' fill='%23AA2D29'/%3E%3Cpath d='M11.25 18.1132H24.75M24.75 18.1132L19.452 24M24.75 18.1132L19.452 12' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: contain;
+}
+.banner3down {
+  box-shadow: 0px 0px 120px 120px rgba(145, 4, 4, 0.842);
+  /* box-shadow: [x축] [y축] [blur] [spread] [color];  */
+  height: 5px;
+  word-break: keep-all;
+  align-items: center;
+  display: flex;
+  transition: 0.5s ease;
+  background: rgba(145, 4, 4, 0.842);
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  left: 0;
+  bottom: -100%;
+  position: absolute;
+}
+.banner3down p {
+  bottom: 0;
+  position: absolute;
+  padding: 30px 40px;
+  word-break: keep-all;
+}
+.banner3box > div:hover .banner3down {
+  bottom: 0;
+}
+.banner3box > div:hover {
+  border: 3px solid rgb(145, 4, 4);
 }
 @media (max-width: 1000px) {
   .listinli {
