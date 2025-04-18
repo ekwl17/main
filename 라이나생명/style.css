@@ -1,0 +1,15 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.top {
+  background: yellowgreen;
+  height: 100px;
+  width: 100%;
+}

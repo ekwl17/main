@@ -2,35 +2,38 @@ const menu = document.querySelector(".menu");
 const menuItems = document.querySelectorAll(".listinli");
 const submenus = document.querySelectorAll(".listinul");
 const bg = document.querySelector(".bg");
-const bgimgs = document.querySelectorAll(".bg > div");
+const bgDiv = document.querySelectorAll(".bg > div");
+const nav = document.querySelector("nav");
+const subBg = document.querySelector(".subBg");
 let closeTimer = null;
 
-menu.addEventListener("mouseenter", () => {
-  clearTimeout(closeTimer);
-});
+function myfnc() {
+  submenus.forEach((v) => v.classList.remove("on"));
+  bgDiv.forEach((v) => v.classList.remove("on"));
+}
 
-menu.addEventListener("mouseleave", () => {
-  closeTimer = setTimeout(() => {
-    submenus.forEach((ul) => ul.classList.remove("on"));
-    bg.classList.remove("on");
-    bgimgs.forEach((bgimg) => bgimg.classList.remove("on"));
-  }, 100);
-});
-
-menuItems.forEach((item, index) => {
-  const submenu = item.querySelector(".listinul");
-
-  item.addEventListener("mouseenter", () => {
+// 메뉴 진입 시 열기
+menuItems.forEach((v, k) => {
+  v.addEventListener("mouseenter", function () {
     clearTimeout(closeTimer);
-    submenus.forEach((ul) => ul.classList.remove("on"));
-    submenu.classList.add("on");
-
+    myfnc();
+    this.querySelector(".listinul").classList.add("on");
+    subBg.classList.add("on");
+    nav.classList.add("on");
     bg.classList.add("on");
-    bgimgs.forEach((bgimg) => bgimg.classList.remove("on"));
-    if (bgimgs[index]) {
-      bgimgs[index].classList.add("on");
-    }
+    bgDiv[k].classList.add("on");
   });
+});
+
+// nav 전체에서 마우스 나가면 닫기
+nav.addEventListener("mouseleave", () => {
+  closeTimer = setTimeout(() => {
+    myfnc();
+    subBg.classList.remove("on");
+    nav.classList.remove("on");
+    bg.classList.remove("on");
+    bgDiv.forEach((v) => v.classList.remove("on"));
+  }, 100);
 });
 
 const slides = document.querySelector(".banner");
