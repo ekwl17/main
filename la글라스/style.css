@@ -407,6 +407,7 @@ section {
   display: flex;
 }
 .banner3box > div {
+  transition: 0.1s ease-in-out;
   border: 3px solid transparent;
   position: relative;
   overflow: hidden;
