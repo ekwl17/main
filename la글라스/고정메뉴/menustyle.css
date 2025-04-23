@@ -341,7 +341,6 @@ nav.on {
   justify-content: center;
   gap: 2vw;
   height: 100%;
-
   opacity: 0;
   position: absolute;
   display: flex;

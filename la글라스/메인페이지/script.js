@@ -1,20 +1,7 @@
-const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".listinli");
-const submenus = document.querySelectorAll(".listinul");
-const bg = document.querySelector(".bg");
-const bgDiv = document.querySelectorAll(".bg > div");
-const nav = document.querySelector("nav");
-const subBg = document.querySelector(".subBg");
-let closeTimer = null;
-
-function myfnc() {
-  submenus.forEach((v) => v.classList.remove("on"));
-  bgDiv.forEach((v) => v.classList.remove("on"));
-}
-
 const slides = document.querySelector(".banner");
 const slideItems = document.querySelectorAll(".banner > div");
 const totalSlides = slideItems.length;
+
 let currentIndex = 0;
 let isTransitioning = false;
 
