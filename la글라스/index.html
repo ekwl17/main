@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <div id="menu"></div>
     <div class="main">
       <section class="rightmenus">
         <div class="rightmenu">
@@ -353,7 +354,16 @@
         </div>
       </section>
     </div>
+    <script type="module">
+      import { initMenuScript } from "./menuscript.js";
 
+      fetch("./menu.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+          initMenuScript();
+        });
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
