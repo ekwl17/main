@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../하단고정메뉴/style.css" />
+    <link rel="stylesheet" href="../고정메뉴/style.css" />
   </head>
 
   <body>
@@ -97,22 +100,28 @@
             </ul>
           </div>
         </div>
+        <div id="footer"></div>
       </section>
-      <div></div>
     </div>
 
+    <script src="./script.js"></script>
     <script type="module">
-      import { initMenuScript } from "./고정메뉴/menuscript.js";
+      import { initMenuScript as initTopMenu } from "../고정메뉴/script.js";
+      import { initMenuScript as initBottomMenu } from "../하단고정메뉴/script.js";
 
-      fetch("./고정메뉴/menu.html")
+      fetch("../고정메뉴/index.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("menu").innerHTML = html;
-          initMenuScript();
+          initMenuScript(); // 메뉴 HTML이 붙은 후 실행해야 함!!
+        });
+      // 하단 메뉴 로드
+      fetch("../하단고정메뉴/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          initBottomMenu();
         });
     </script>
-    <link rel="stylesheet" href="./style2.css" />
-    <link rel="stylesheet" href="./고정메뉴/menustyle.css" />
-    <script src="./script2.js"></script>
   </body>
 </html>

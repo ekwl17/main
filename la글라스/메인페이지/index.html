@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../하단고정메뉴/style.css" />
+    <link rel="stylesheet" href="../고정메뉴/style.css" />
   </head>
 
   <body>
-    <div id="menu"></div>
     <div class="main">
+      <div id="menu"></div>
       <section class="bannersec">
         <div class="banner">
           <div>
@@ -62,7 +64,7 @@
       <section class="banner2">
         <div>
           <div class="banner2in">
-            <div class="banner2tit">
+            <div class="bannertit tit2">
               <p>Business</p>
               <h1>Company</h1>
             </div>
@@ -121,7 +123,7 @@
       </section>
       <section class="banner3">
         <div class="banner3in">
-          <div class="banner3tit">
+          <div class="bannertit">
             <p>Business</p>
             <h1>Company</h1>
           </div>
@@ -189,19 +191,130 @@
           </div>
         </div>
       </section>
+      <section class="banner4">
+        <div class="banner4in">
+          <div class="banner4line">
+            <div class="bannertit">
+              <p>Business</p>
+              <h1>Company</h1>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>
+                  LX글라스, 컬러 코팅유리 ‘파스텔’ 출시로 세련된 건물 디자인
+                  실현
+                </p>
+                <p>2025.04.09</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>LX글라스, 품질 관리 강화를 위한 듀오라이트 클럽 제도 개편</p>
+                <p>2025.02.24</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>
+                  LX글라스, 세계 최고 단열성능의 더블로이유리 ‘SKN154II’ 논엣지
+                  버전 출시
+                </p>
+                <p>2025.01.16</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>LX글라스, 그레이 색상의 저반사 더블로이유리 SKG135II 출시</p>
+                <p>2024.12.02</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>LX글라스, 2025년 임원인사 단행</p>
+                <p>2024.11.19</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>LX글라스, ‘2024 대한민국 KS명가’ 선정</p>
+                <p>2024.11.19</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>보도자료</p>
+                <p>[2024 한국품질만족도 1위] 유리 전문 브랜드 한글라스</p>
+                <p>2024.11.19</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="banner5">
+        <div class="banner5in">
+          <div class="bannertit tit2">
+            <p>Business</p>
+            <h1>Company</h1>
+          </div>
+          <div class="banner5box">
+            <div class="boxdiv1">
+              <div class="boxdiv1in1">
+                <video autoplay muted loop playsinline>
+                  <source
+                    src="https://www.lxglas.co.kr/assets/front/images/main/main_contact_video.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <div>
+                  <div>
+                    <p>Recruit</p>
+                    <p>
+                      도전과 혁신으로 새로운 미래로의 연결을<br />
+                      꿈꾸는 여러분을 기다리고 있습니다.
+                    </p>
+                  </div>
+                  <p>채용 바로가기</p>
+                </div>
+              </div>
+              <div class="boxdiv1in2">
+                <div><p>대리점 안내</p></div>
+                <div><p>문의하기</p></div>
+                <div><p>기술자료</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer"></div>
+      </section>
     </div>
+    <script src="./script.js"></script>
     <script type="module">
-      import { initMenuScript } from "../고정메뉴/menuscript.js";
+      import { initMenuScript as initTopMenu } from "../고정메뉴/script.js";
+      import { initMenuScript as initBottomMenu } from "../하단고정메뉴/script.js";
 
-      fetch("../고정메뉴/menu.html")
+      fetch("../고정메뉴/index.html")
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("menu").innerHTML = html;
-          initMenuScript();
+          initMenuScript(); // 메뉴 HTML이 붙은 후 실행해야 함!!
+        });
+      // 하단 메뉴 로드
+      fetch("../하단고정메뉴/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          initBottomMenu();
         });
     </script>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="../고정메뉴/menustyle.css" />
   </body>
 </html>
 <!-- https://www.lxglas.co.kr/ko -->
+<!-- https://group.hankook.com/default/ -->

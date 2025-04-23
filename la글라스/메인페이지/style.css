@@ -1,82 +1,86 @@
 @charset "utf-8";
 
+/* 타이틀 */
+.bannertit {
+  max-width: 63vw;
+  margin: 0 auto;
+  padding: 140px 0 80px;
+  font-size: 28px;
+}
+.tit2 {
+  padding: 90px 0 80px;
+}
+.bannertit p {
+  color: rgb(177, 0, 0);
+  font-weight: 500;
+}
+
+/* ----------------------------- */
+/* 배너2 - 비즈니스 소개 */
 .banner2 {
-  margin-top: 80px;
+  margin-top: 1vh;
   position: relative;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
 }
 .banner2in {
-  margin: 0 auto;
   max-width: 63vw;
+  margin: 0 auto;
   height: 100%;
 }
 .banner2boxs {
-  border-top: 1px solid rgb(177, 177, 177);
-  border-bottom: 1px solid rgb(177, 177, 177);
   width: 100%;
+  height: 66vh;
+  border-top: 1px solid #b1b1b1;
+  border-bottom: 1px solid #b1b1b1;
 }
 .banner2box {
-  margin: 0 auto;
   max-width: 63vw;
-  width: 100%;
-  height: 67vh;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  position: relative;
-  display: flex;
 }
-
 .banner2box > div {
-  padding: 2vw;
   flex: 1;
-  position: relative;
-  flex-direction: column;
+  padding: 2vw;
   display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .banner2boximg {
   display: flex;
 }
 .banner2boximg img {
-  max-width: 100%;
-  height: auto;
   display: block;
+  width: 100%;
+  height: auto;
 }
 .banner2box > div h1 {
   font-size: 35px;
   padding: 20px 0;
 }
-.banner2tit {
-  font-size: 28px;
-  padding: 90px 0 30px;
-  margin: 0 auto;
-  flex-direction: column;
-  display: flex;
-}
 .banner2box > div::after {
+  content: "";
+  position: absolute;
   top: 0;
   right: 0;
-  content: "";
-  height: 100%;
   width: 1px;
-  background: rgb(177, 177, 177);
-  position: absolute;
+  height: 100%;
+  background: #b1b1b1;
 }
 .banner2box > div:first-child:before {
-  left: 0;
-  top: 0;
   content: "";
-  height: 100%;
-  width: 1px;
-  background: rgb(177, 177, 177);
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: #b1b1b1;
 }
 .banner2txt {
+  position: relative;
   word-break: keep-all;
   height: 100%;
-  position: relative;
 }
-
 .banner2txt::after {
   content: "";
   position: absolute;
@@ -86,188 +90,237 @@
   bottom: 15vh;
 }
 .banner2bt {
-  bottom: 10vh;
-  right: 0;
   position: absolute;
+  right: 0;
+  bottom: 10vh;
 }
+
+/* ----------------------------- */
+/* 배너3 - 제품 소개 */
 .banner3 {
   margin-top: 80px;
-  position: relative;
-  overflow: hidden;
   height: 100vh;
   width: 100vw;
-}
-.menutb {
-  flex-direction: column;
-  left: 10px;
-  position: absolute;
-  margin: 0 20px;
-  height: 30px;
-  width: 45px;
-  display: none;
-  justify-content: space-between;
-}
-.menutb div {
   position: relative;
-  background: black;
-  height: 5px;
-  width: 100%;
 }
-.banner3tit {
-  font-size: 28px;
-  padding: 140px 0 80px;
+.banner3in {
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 100%;
 }
 .banner3box {
   width: 1200px;
   margin: 0 auto;
-  justify-content: space-between;
-  position: relative;
   display: flex;
+  justify-content: space-between;
 }
 .banner3box > div {
-  transition: 0.1s ease-in-out;
-  border: 3px solid transparent;
   position: relative;
   overflow: hidden;
+  border: 3px solid transparent;
+  transition: 0.1s ease-in-out;
+}
+.banner3box > div img {
+  display: block;
+  transition: 0.5s ease-in-out;
 }
 .banner3box > div:hover img {
   transform: scale(1.3);
 }
-.banner3box > div img {
-  transition: 0.5s ease-in-out;
-  display: block;
-}
-.banner3in {
-  margin: 0 auto;
-  width: 1200px;
-  height: 100%;
-  /* max-width: 63vw; */
+.banner3box > div:hover {
+  border-color: rgb(145, 4, 4);
 }
 .banner3boxinbt {
-  margin: 30px 0 0 30px;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  height: 50px;
-  font-weight: 500;
-  width: 100%;
-  color: white;
-  top: 0;
-  font-size: 24px;
   position: absolute;
+  top: 0;
+  margin: 30px 0 0 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
 }
 .banner3boxinbt::after {
-  position: relative;
-  margin-right: 60px;
   content: "";
+  margin-right: 60px;
   width: 40px;
   height: 40px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='none'%3E%3Crect width='36' height='36' rx='18' fill='%23AA2D29'/%3E%3Cpath d='M11.25 18.1132H24.75M24.75 18.1132L19.452 24M24.75 18.1132L19.452 12' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,...");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .banner3down {
-  box-shadow: 0px 0px 120px 120px rgba(145, 4, 4, 0.842);
-  /* box-shadow: [x축] [y축] [blur] [spread] [color];  */
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
   height: 5px;
-  word-break: keep-all;
-  align-items: center;
-  display: flex;
-  transition: 0.5s ease;
   background: rgba(145, 4, 4, 0.842);
   color: white;
   font-weight: 500;
-  width: 100%;
-  left: 0;
-  bottom: -100%;
-  position: absolute;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+  box-shadow: 0 0 120px 120px rgba(145, 4, 4, 0.842);
 }
 .banner3down p {
-  bottom: 0;
-  position: absolute;
   padding: 30px 40px;
+  position: absolute;
+  bottom: 0;
   word-break: keep-all;
 }
 .banner3box > div:hover .banner3down {
   bottom: 0;
 }
-.banner3box > div:hover {
-  border: 3px solid rgb(145, 4, 4);
-}
-@media (max-width: 1000px) {
-  .listinli {
-    display: none;
-  }
-  .bannertxt {
-    bottom: 20vh;
-    left: 10vw;
-    font-size: 40px;
-  }
-  .menu {
-    background: white;
-  }
-  .menutb {
-    display: flex;
-  }
-  .logo {
-    margin-left: 40px;
-  }
-}
-@media (max-width: 500px) {
-  .listinli {
-    display: none;
-  }
-  .bannertxt {
-    bottom: 20vh;
-    left: 10vw;
-    font-size: 23px;
-  }
-  .menu {
-    background: white;
-  }
-  .menutb {
-    display: flex;
-  }
-  .logo {
-    margin-left: 40px;
-  }
-  .rightmenu {
-    color: white;
-    position: fixed;
-    width: 55px;
-    top: 80px;
-  }
-  .rm1 {
-    line-height: 1;
-    font-size: 13px;
-    padding: 20px 0;
-    width: 100%;
-    font-weight: bold;
-    background: rgb(168, 13, 13);
-  }
-  .rm2 {
-    font-size: 12px;
-    padding: 13px 0;
-    text-align: center;
-    line-height: 1.3;
-    width: 100%;
-    background: rgb(122, 122, 122);
-  }
-  .right {
-    width: 100px;
-    right: 10px;
-    position: absolute;
-    display: flex;
-  }
-  .lang {
-    display: flex;
-    position: relative;
-    height: 100%;
-    font-size: 17px;
-    width: 100px;
-    margin-right: 10px;
-  }
 
-  .logo a img {
-    width: 120px;
-  }
+/* ----------------------------- */
+/* 배너4 - 뉴스 리스트 */
+.banner4in {
+  width: 100%;
+  height: 100%;
+}
+.banner4line,
+.banner4in ul li {
+  border-bottom: 1px solid #c2c2c2;
+}
+.banner4in ul li {
+  width: 100%;
+  position: relative;
+}
+.banner4in ul li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 8.5vh;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.banner4in ul li div p:first-child {
+  color: rgb(177, 0, 0);
+  font-weight: 600;
+}
+.banner4in ul li div p:nth-child(2) {
+  flex: 1;
+  margin-left: 6vw;
+}
+.banner4in ul li div p:last-child {
+  color: #9c9c9c;
+  font-weight: 600;
+}
+
+/* ----------------------------- */
+/* 배너5 - 비디오 */
+.banner5 {
+  overflow: visible;
+}
+.banner5box {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  border-top: 1px solid #c2c2c2;
+  border-bottom: 1px solid #c2c2c2;
+}
+.boxdiv1 {
+  flex-direction: column;
+  display: flex;
+  border-left: 1px solid #c2c2c2;
+  border-right: 1px solid #c2c2c2;
+  position: relative;
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 100%;
+}
+.boxdiv1in1 {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.boxdiv1in1 > div {
+  gap: 12vw;
+
+  align-items: flex-end;
+  justify-content: space-between;
+  display: flex;
+  position: absolute;
+}
+.boxdiv1in1 > div > div {
+  font-size: 2rem;
+  position: relative;
+}
+.boxdiv1in1 > div > p {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  position: relative;
+}
+.boxdiv1in1 > div > div p:first-child {
+  font-weight: 600;
+  color: rgb(177, 0, 0);
+}
+.boxdiv1in1 > div > p::after {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' rx='18' fill='%23AA2D29'/%3E%3Cpath d='M11.25 18.1132H24.75M24.75 18.1132L19.452 24M24.75 18.1132L19.452 12' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.boxdiv1in1 video {
+  position: absolute;
+  top: -17vh;
+}
+.boxdiv1in2 {
+  background: white;
+  border-top: 1px solid #c2c2c2;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 10vh;
+}
+.boxdiv1in2 > div {
+  display: flex;
+  position: relative;
+  height: 100%;
+  flex: 1;
+}
+.boxdiv1in2 > div p {
+  padding: 0 3vw;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.boxdiv1in2 > div p::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M13.5 20L21 12.5M21 12.5L13.5 5M21 12.5H3' stroke='%231E1E1E' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.boxdiv1in2 > div:nth-child(2) {
+  border-left: 1px solid #c2c2c2;
+  border-right: 1px solid #c2c2c2;
 }

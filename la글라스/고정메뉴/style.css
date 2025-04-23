@@ -5,7 +5,8 @@
 }
 html,
 body {
-  scroll-behavior: smooth;
+  height: 100%;
+  /* scroll-behavior: smooth; */
 }
 a {
   color: black;
@@ -15,6 +16,7 @@ ul {
   list-style: none;
 }
 section {
+  /* scroll-snap-align: none; */
   overflow: hidden;
   position: relative;
   height: 100vh;
@@ -34,7 +36,6 @@ section {
   overflow: visible;
   width: 18vw;
   height: 90vh;
-  background: yellowgreen;
   z-index: 9999;
   position: fixed;
 }
@@ -52,16 +53,16 @@ section {
 .rm {
   display: flex;
   top: 0;
-  left: -4vw;
+  left: -4.7vw;
   position: absolute;
   flex-direction: column;
   color: white;
   font-weight: bold;
   z-index: 9999;
-  width: 4vw;
+  width: 4.7vw;
 }
 .rm1 {
-  padding: 12vw 0;
+  padding: 10vw 0;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -179,7 +180,7 @@ nav.on {
 .listinli > a {
   font-weight: 450;
   color: black;
-  padding: 0 2vw;
+  padding: 0 1.5vw;
   align-items: center;
   display: flex;
   height: 100%;
@@ -227,6 +228,7 @@ nav.on {
   color: rgb(204, 6, 6);
 }
 .right {
+  padding-right: 1vw;
   gap: 1vw;
   position: relative;
   display: flex;
