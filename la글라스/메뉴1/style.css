@@ -3,7 +3,35 @@
 body {
   overflow-x: hidden;
 }
-
+#footer {
+  position: relative;
+  margin-top: 10vh;
+}
+.midfont {
+  font-weight: 500;
+  padding: 3vh 0 5vh;
+  font-size: 2.5rem;
+}
+.name {
+  align-items: center;
+  padding-bottom: 7vh;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6vh;
+  gap: 2.5vw;
+  display: flex;
+}
+.me h1 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+.me h2 {
+  font-weight: 400;
+  font-size: 1.7rem;
+  text-align: center;
+}
+/*배너 1--------------------*/
 .banner1 {
   transition: 0.5s ease-in-out;
   opacity: 1;
@@ -15,7 +43,6 @@ body {
   justify-content: space-between;
   padding-bottom: 9vh;
   align-items: flex-end;
-
   font-size: 1.3rem;
   flex: 1;
   width: 100%;
@@ -27,21 +54,36 @@ body {
   font-size: 4rem;
 }
 .banner1left {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease-out forwards;
+  animation-delay: 0s;
   flex-direction: column;
   display: flex;
 }
 .banner1right {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease-out forwards;
+  animation-delay: 0.5s;
   align-items: center;
   position: relative;
   font-weight: 500;
   gap: 0.8vw;
   display: flex;
 }
+
+.banner1img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease-out forwards;
+  animation-delay: 1s;
+}
+
 .riimg {
   display: flex;
 }
-.riimg img {
-}
+
 .ri1 {
   color: rgb(177, 13, 13);
   font-weight: 500;
@@ -52,126 +94,111 @@ body {
   width: 100%;
 }
 .banner1img p {
+  position: relative;
   margin: 0 auto;
-  max-width: 1730px;
+  max-width: 1570px;
 }
 .banner1img p img {
   width: 100%;
 }
-.banner2 {
-  overflow: visible;
-  padding-top: 9vh;
-  font-size: 1.5rem;
+/*배너 1--------------------*/
 
-  position: relative;
-}
-.banner2in1 {
+/*중간메뉴--------------------*/
+.menu2 {
   padding-bottom: 9vh;
+  padding-top: 7vh;
   align-items: center;
   justify-content: space-around;
-  height: 8vh;
+  height: 7vh;
   display: flex;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 950px;
 }
-.banner2in1 p {
+.menu2 p {
+  justify-content: center;
+  display: flex;
   position: relative;
-  height: 100%;
+  height: 80%;
+  flex: 1;
+}
+.menu2 p span {
+  font-weight: 500;
+  font-size: 1.3rem;
+  border-bottom: 3.5px solid rgb(179, 28, 28);
   justify-content: center;
   align-items: center;
   display: flex;
   text-align: center;
-  flex: 1;
+  height: 100%;
+  width: 90%;
 }
-.banner2in1 p::after {
+.menu2 p a.on {
+  border-bottom: 3.5px solid rgb(179, 28, 28);
+}
+.menu2 p::after {
   content: "";
-  height: 2.5vh;
+  height: 2.3vh;
   width: 2px;
-  background: gray;
+  background: rgb(168, 168, 168);
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
-.banner2in1 p:last-child::after {
+.menu2 p:last-child::after {
   content: "";
   background: transparent;
 }
-.in2h1 {
-  font-size: 3rem;
-}
-.banner2in2 {
-  position: relative;
+/*중간메뉴--------------------*/
+
+.banner2 {
   flex-direction: column;
   display: flex;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  padding-top: 11vh;
+  font-size: 1.5rem;
+  position: relative;
+}
+.banner2 > div {
+  flex: 1;
+  position: relative;
+}
+.boxs {
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   max-width: 1200px;
-}
-
-.div1 {
-  gap: 2vh;
-  align-items: center;
-  padding-bottom: 7vh;
-  border-bottom: 1px solid gray;
-  display: flex;
-}
-
-.div2in {
-  margin-bottom: 6vh;
-
-  gap: 2.5vw;
-  display: flex;
-}
-.div2in p {
-  flex: 1;
-}
-.div2in div {
-  flex: 1;
-}
-.div2intxt {
-  flex-direction: column;
-  display: flex;
-  word-break: keep-all;
-  font-size: 1.3rem;
-  padding: 2vw;
-}
-.div2in p img {
-  width: 100%;
-}
-.banner2in2 > div {
-  flex-direction: column;
-  display: flex;
-}
-.div2txt {
-  font-weight: 500;
-  padding: 7vh
-  font-size: 2.5rem;
-}
-.div2 ul {
-  border-top: 1px solid gray;
-  flex-direction: column;
-  display: flex;
-}
-.div2 ul li {
   position: relative;
-  align-items: center;
-  border-bottom: 1px solid rgb(201, 201, 201);
-
-  font-size: 1rem;
-  height: 6vh;
+}
+.boxs > div {
+  background: yellowgreen;
+  position: relative;
   display: flex;
 }
-.div2 ul li p:first-child {
-  margin-left: 1vw;
-  width: 7vw;
+.me {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  flex-direction: column;
+  display: flex;
 }
-.div2 ul li p:last-child {
-  color: rgb(97, 97, 97);
+
+#in1 {
+  display: none;
+  height: 115vh;
 }
-.banner1 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease-out forwards;
+#in2 {
+  display: none;
+  height: 220vh;
+}
+
+#in3 {
+}
+#in4 {
+  display: none;
 }
 
 @keyframes fadeUp {

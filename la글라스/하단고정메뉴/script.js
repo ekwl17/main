@@ -47,38 +47,38 @@ export function initMenuScript() {
   });
 }
 
-//스크롤효과
-const sections = document.querySelectorAll("section");
-let currentIndex = 0;
-let isScrolling = false;
+// //스크롤효과
+// const sections = document.querySelectorAll("section");
+// let currentIndex = 0;
+// let isScrolling = false;
 
-function scrollToIndex(index) {
-  if (index < 0 || index >= sections.length) return;
+// function scrollToIndex(index) {
+//   if (index < 0 || index >= sections.length) return;
 
-  isScrolling = true;
-  sections[index].scrollIntoView({
-    behavior: "smooth",
-  });
+//   isScrolling = true;
+//   sections[index].scrollIntoView({
+//     behavior: "smooth",
+//   });
 
-  setTimeout(() => {
-    isScrolling = false;
-    currentIndex = index;
-  }, 800); // 이동 시간 고려해서 스크롤 잠금
-}
+//   setTimeout(() => {
+//     isScrolling = false;
+//     currentIndex = index;
+//   }, 1000); // 이동 시간 고려해서 스크롤 잠금
+// }
 
-window.addEventListener(
-  "wheel",
-  (e) => {
-    if (isScrolling) return;
+// window.addEventListener(
+//   "wheel",
+//   (e) => {
+//     if (isScrolling) return;
 
-    if (e.deltaY > 0 && currentIndex < sections.length - 1) {
-      scrollToIndex(currentIndex + 1);
-    } else if (e.deltaY < 0 && currentIndex > 0) {
-      scrollToIndex(currentIndex - 1);
-    }
-  },
-  { passive: false }
-);
+//     if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+//       scrollToIndex(currentIndex + 1);
+//     } else if (e.deltaY < 0 && currentIndex > 0) {
+//       scrollToIndex(currentIndex - 1);
+//     }
+//   },
+//   { passive: false }
+// );
 
-// 페이지 진입 시 초기 위치 설정
-window.onload = () => scrollToIndex(0);
+// // 페이지 진입 시 초기 위치 설정
+// window.onload = () => scrollToIndex(0);

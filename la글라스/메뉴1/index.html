@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../하단고정메뉴/style.css" />
     <link rel="stylesheet" href="../고정메뉴/style.css" />
+    <link rel="stylesheet" href="./기업개요/style.css" />
+    <link rel="stylesheet" href="./CI및BI소개/style.css" />
+    <link rel="stylesheet" href="./브랜드소개/style.css" />
+    <link rel="stylesheet" href="./연혁/style.css" />
   </head>
 
   <body>
@@ -41,63 +45,18 @@
         </div>
       </section>
       <section class="banner2">
-        <div class="banner2in1">
-          <p>기업개요</p>
-          <p>CI 및 BI 소개</p>
-          <p>브랜드 소개</p>
-          <p>연햑</p>
-        </div>
-        <div class="banner2in2">
-          <div class="div1">
-            <p class="in2h1">LX글라스 소개</p>
-            <p>LX글라스는 1957년 설립된 국내 최초의 유리 전문 기업입니다.</p>
+        <div>
+          <div class="menu2">
+            <p><span>기업개요</span></p>
+            <p><span>CI 및 BI 소개</span></p>
+            <p><span>브랜드 소개</span></p>
+            <p><span>연햑</span></p>
           </div>
-          <div class="div2">
-            <div class="div2txt"><p>기업정보</p></div>
-            <div class="div2in">
-              <p>
-                <img
-                  src="https://www.lxglas.co.kr/assets/front/images/sub/company_img_01.jpg"
-                  alt=""
-                />
-              </p>
-              <div class="div2intxt">
-                <p>
-                  LX글라스는 1957년에 설립되어 각종 원판 유리 및 고기능성 유리를
-                  제조 및 판매하는 국내 최초의 유리 전문기업으로 한국의
-                  유리산업을 선도해오고 있습니다.
-                </p>
-                <p>
-                  국내 최초로 로이유리를 생산하였고, 고성능 코팅유리,
-                  스마트글라스, 가전용유리 등 다양한 제품의 기술 개발을 이어가고
-                  있으며 건축물의 에너지를 절약하고 환경을 보호하기 위한 다양한
-                  솔루션을 개발하는 등 친환경적이고 스마트한 주거환경을 만들기
-                  위해 최선을 다하고 있습니다.
-                </p>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <p>회사명</p>
-                <p>㈜ LX글라스</p>
-              </li>
-              <li>
-                <p>대표이사</p>
-                <p>이강훈</p>
-              </li>
-              <li>
-                <p>설립일</p>
-                <p>1957년 3월 25일</p>
-              </li>
-              <li>
-                <p>본사 주소</p>
-                <p>서울특별시 서초구 효령로72길 60 한전아트센터 본관 7~8층</p>
-              </li>
-              <li>
-                <p>업종</p>
-                <p>판유리 및 기능성 유리 제조업</p>
-              </li>
-            </ul>
+          <div class="boxs">
+            <div id="in1"></div>
+            <div id="in2"></div>
+            <div id="in3"></div>
+            <div id="in4"></div>
           </div>
         </div>
         <div id="footer"></div>
@@ -120,6 +79,30 @@
         .then((res) => res.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
+          initBottomMenu();
+        });
+      fetch("./기업개요/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in1").innerHTML = html;
+          initBottomMenu();
+        });
+      fetch("./CI및BI소개/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in2").innerHTML = html;
+          initBottomMenu();
+        });
+      fetch("./브랜드소개/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in3").innerHTML = html;
+          initBottomMenu();
+        });
+      fetch("./연혁/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in4").innerHTML = html;
           initBottomMenu();
         });
     </script>
