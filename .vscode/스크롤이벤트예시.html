@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <style>
+      .full_screen {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 100vh;
+        margin-top: 400px;
+        overflow: hidden;
+      }
+      .full_screen .title {
+        display: inline-block;
+      }
+
+      .img01_div {
+        width: 100%;
+        height: 500vh;
+        overflow: hidden;
+        margin-bottom: 500px;
+      }
+      .img01_div > img {
+        width: 50%;
+        transform-origin: center;
+      }
+    </style>
+
+    <div class="full_screen">
+      <span class="title">Txtient eldmdl</span>
+    </div>
+
+    <div class="img01_div">
+      <img
+        src="https://images.unsplash.com/photo-1688890239467-c43da335fe7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        alt=""
+      />
+    </div>
+    <script>
+      gsap.from(".title", {
+        scrollTrigger: {
+          trigger: ".full_screen", //어느 요소에 스크롤이 도착했을 때 시작할건지
+          start: "-20% 40%", //스크롤 트리거의 시작 기준점 설정. 앞의 값은 트리거 요소 기준(.full_screen의 상단부터 -20% 적용), 뒤의 값은 보고있는 페이지의 높이 기준.
+          end: "center center", //스크롤 트리거의 끝점 설정.
+          scrub: 0.5, //스크롤 바를 잡는데 걸리는 시간(움직임의 구현 속도 설정. 높을수록 느림.)
+          // markers: true,  //기준점을 화면에 표시할지 설정.
+          onLeave: function () {
+            // 끝나는지점 callback함수
+            console.log("첫번째 이벤트 완료");
+          },
+        },
+        scale: 10,
+      });
+      gsap.from(".img01_div > img", {
+        scrollTrigger: {
+          trigger: ".img01_div",
+          start: "top ",
+          end: "bottom top",
+          scrub: 8,
+          markers: true,
+          pin: true, // ← 여기 핀 추가
+          pinSpacing: false, // optional: 빈 공간 없이 핀 유지
+        },
+      });
+    </script>
+  </body>
+</html>

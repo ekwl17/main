@@ -1,48 +1,55 @@
 export function initMenuScript() {
-  const menuItems = document.querySelectorAll(".listinli");
-  const submenus = document.querySelectorAll(".listinul");
-  const bg = document.querySelector(".bg");
-  const bgDiv = document.querySelectorAll(".bg > div");
-  const nav = document.querySelector("nav");
-  const subBg = document.querySelector(".subBg");
-  const rightmenus = document.querySelector(".rightmenus");
-  const rm = document.querySelector(".rm");
+  // script.js
+  (() => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const rightmenus = document.querySelector(".rightmenus");
+      const rm = document.querySelector(".rm");
+      const closeBtn = document.querySelector(".closeBtn");
 
-  let closeTimer = null;
+      const menuItems = document.querySelectorAll(".listinli");
+      const submenus = document.querySelectorAll(".listinul");
+      const bg = document.querySelector(".bg");
+      const bgDiv = document.querySelectorAll(".bg > div");
+      const nav = document.querySelector("nav");
+      const subBg = document.querySelector(".subBg");
 
-  function myfnc() {
-    submenus.forEach((v) => v.classList.remove("on"));
-    bgDiv.forEach((v) => v.classList.remove("on"));
-  }
+      let closeTimer;
 
-  if (rm && rightmenus) {
-    rm.addEventListener("click", function () {
-      rightmenus.classList.toggle("on");
+      // 메뉴 열기/닫기
+      rm.addEventListener("click", () => {
+        rightmenus.classList.add("on");
+      });
+      closeBtn.addEventListener("click", () => {
+        rightmenus.classList.remove("on");
+      });
+
+      // 서브메뉴 토글 함수
+      function closeAllSub() {
+        submenus.forEach((v) => v.classList.remove("on"));
+        bgDiv.forEach((v) => v.classList.remove("on"));
+        subBg.classList.remove("on");
+        nav.classList.remove("on");
+        bg.classList.remove("on");
+      }
+
+      // 호버로 서브메뉴 열기
+      menuItems.forEach((item, idx) => {
+        item.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer);
+          closeAllSub();
+
+          item.querySelector(".listinul")?.classList.add("on");
+          subBg.classList.add("on");
+          nav.classList.add("on");
+          bg.classList.add("on");
+          bgDiv[idx]?.classList.add("on");
+        });
+      });
+
+      // 네비 전체 영역 벗어나면 닫기
+      nav.addEventListener("mouseleave", () => {
+        closeTimer = setTimeout(closeAllSub, 100);
+      });
     });
-  }
-
-  menuItems.forEach((v, k) => {
-    v.addEventListener("mouseenter", function () {
-      clearTimeout(closeTimer);
-      myfnc();
-
-      const submenu = this.querySelector(".listinul");
-      if (submenu) submenu.classList.add("on");
-
-      subBg.classList.add("on");
-      nav.classList.add("on");
-      bg.classList.add("on");
-      if (bgDiv[k]) bgDiv[k].classList.add("on");
-    });
-  });
-
-  nav.addEventListener("mouseleave", () => {
-    closeTimer = setTimeout(() => {
-      myfnc();
-      subBg.classList.remove("on");
-      nav.classList.remove("on");
-      bg.classList.remove("on");
-      bgDiv.forEach((v) => v.classList.remove("on"));
-    }, 100);
-  });
+  })();
 }

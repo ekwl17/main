@@ -173,7 +173,6 @@ body {
   position: relative;
 }
 .boxs > div {
-  background: yellowgreen;
   position: relative;
   display: flex;
 }
@@ -196,9 +195,11 @@ body {
 }
 
 #in3 {
+  display: none;
+  height: 150vh;
 }
 #in4 {
-  display: none;
+  height: 150vh;
 }
 
 @keyframes fadeUp {

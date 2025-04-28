@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100vh; /* 화면 전체 높이 */
+      }
+      .swiper-scrollbar {
+        width: 8px; /* 세로 스크롤바 너비 */
+        height: 100%;
+        right: 2px;
+        top: 0;
+      }
+      .swiper-scrollbar-drag {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
+        },
+      });
+      var swiper = new Swiper(".mySwiper", {
+        direction: "vertical", // ← 수직 모드로 변경
+        simulateTouch: false, // 드래그 비활성화
+        mousewheel: {
+          // 휠로만 조작
+          invert: false,
+          forceToAxis: true,
+          sensitivity: 1,
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
+          draggable: false, // 드래그도 막고 싶으면 false
+        },
+      });
+    </script>
+    <script></script>
+  </body>
+</html>
