@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../하단고정메뉴/style.css" />
+    <link rel="stylesheet" href="../고정메뉴/style.css" />
+  </head>
+
+  <style></style>
+
+  <body>
+    <div class="main">
+      <div id="menu"></div>
+
+      <section class="banner1">
+        <div class="banner1txt">
+          <div class="banner1left">
+            <p class="ri1">기업소개</p>
+            <p class="banner1tit">About LX글라스</p>
+          </div>
+          <div class="banner1right">
+            <p class="riimg">
+              <img
+                src="data:image/svg+xml, %3Csvg width='20' height='20' ..."
+                alt=""
+              />
+            </p>
+            <p>기업소개</p>
+            <p>About LX글라스</p>
+            <p class="ri1">기업개요</p>
+          </div>
+        </div>
+        <div class="banner1img">
+          <p>
+            <img
+              src="https://www.lxglas.co.kr/assets/front/images/sub/subvisual_aboutglass_01.jpg"
+              alt=""
+            />
+          </p>
+        </div>
+      </section>
+
+      <section class="banner2">
+        <div>
+          <div class="menu2">
+            <p><span>기업개요</span></p>
+            <p><span>CI 및 BI 소개</span></p>
+            <p><span>브랜드 소개</span></p>
+            <p><span>연혁</span></p>
+          </div>
+
+          <div class="boxs">
+            <div id="in1"></div>
+            <div id="in2"></div>
+            <div id="in3"></div>
+
+            <div class="boxsbg">
+              <div class="in1bg"></div>
+              <div class="in2bg"></div>
+              <div class="in3bg"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="footer"></div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuItems = document.querySelectorAll(".menu2 p");
+        const spans = document.querySelectorAll(".menu2 p span");
+        const inBoxes = [
+          document.getElementById("in1"),
+          document.getElementById("in2"),
+          document.getElementById("in3"),
+        ];
+        const bgBoxes = document.querySelectorAll(".boxsbg > div");
+
+        // 기본 첫 번째 on 활성화
+        inBoxes[0]?.classList.add("on");
+        bgBoxes[0]?.classList.add("on");
+        spans[0]?.classList.add("on");
+
+        menuItems.forEach((item, index) => {
+          item.addEventListener("click", () => {
+            inBoxes.forEach((box) => box?.classList.remove("on"));
+            bgBoxes.forEach((box) => box.classList.remove("on"));
+            spans.forEach((sp) => sp.classList.remove("on"));
+
+            if (index < 3) {
+              inBoxes[index]?.classList.add("on");
+              bgBoxes[index]?.classList.add("on");
+              spans[index]?.classList.add("on");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script type="module">
+      // 고정메뉴 로드
+      import { initMenuScript as initTopMenu } from "../고정메뉴/script.js";
+      import { initMenuScript as initBottomMenu } from "../하단고정메뉴/script.js";
+
+      fetch("../고정메뉴/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+          initTopMenu(); // ✅ 이렇게
+        });
+
+      fetch("../하단고정메뉴/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("footer").innerHTML = html;
+          initBottomMenu(); // ✅ 이렇게
+        });
+      // in 콘텐츠들 로드
+      fetch("./기업개요/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in1").innerHTML = html;
+        });
+
+      fetch("./CI및BI소개/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in2").innerHTML = html;
+        });
+
+      fetch("./브랜드소개/index.html")
+        .then((res) => res.text())
+        .then((html) => {
+          document.getElementById("in3").innerHTML = html;
+        });
+    </script>
+  </body>
+</html>

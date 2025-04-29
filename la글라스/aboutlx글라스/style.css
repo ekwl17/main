@@ -13,6 +13,8 @@ body {
   font-size: 2.5rem;
 }
 .name {
+  height: 20vh;
+  width: 1200px;
   align-items: center;
   padding-bottom: 7vh;
   border-bottom: 1px solid gray;
@@ -124,7 +126,7 @@ body {
 .menu2 p span {
   font-weight: 500;
   font-size: 1.3rem;
-  border-bottom: 3.5px solid rgb(179, 28, 28);
+
   justify-content: center;
   align-items: center;
   display: flex;
@@ -132,9 +134,10 @@ body {
   height: 100%;
   width: 90%;
 }
-.menu2 p a.on {
+.menu2 p span.on {
   border-bottom: 3.5px solid rgb(179, 28, 28);
 }
+
 .menu2 p::after {
   content: "";
   height: 2.3vh;
@@ -185,23 +188,47 @@ body {
   display: flex;
 }
 
-#in1 {
-  display: none;
-  height: 115vh;
-}
-#in2 {
-  display: none;
-  height: 220vh;
-}
-
+#in1,
+#in2,
 #in3 {
-  display: none;
-  height: 150vh;
-}
-#in4 {
-  height: 150vh;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute;
 }
 
+#in1.on {
+  height: 115vh;
+  opacity: 1;
+}
+#in2.on {
+  height: 220vh;
+  opacity: 1;
+}
+
+#in3.on {
+  height: 150vh;
+  opacity: 1;
+}
+.in1bg,
+.in2bg,
+.in3bg {
+  display: none;
+}
+
+.in1bg.on {
+  height: 115vh;
+  display: block;
+}
+.in2bg.on {
+  height: 220vh;
+  display: block;
+}
+.in3bg.on {
+  height: 150vh;
+  display: block;
+}
 @keyframes fadeUp {
   to {
     opacity: 1;
