@@ -1,0 +1,733 @@
+@charset "utf-8";
+/* 상단메뉴 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.menu {
+  overflow: visible;
+}
+.rightmenus {
+  transition: 0.5s ease-in-out;
+  right: -18vw;
+  overflow: visible;
+  width: 18vw;
+  height: 90vh;
+  z-index: 9999;
+  position: fixed;
+}
+.rightmenus.on {
+  right: 0;
+}
+.rightmenu {
+  background: rgb(141, 13, 13);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.rm {
+  cursor: pointer;
+  display: flex;
+  top: 0;
+  left: -4vw;
+  position: absolute;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+  z-index: 9999;
+  width: 4vw;
+}
+.rm1 {
+  padding: 10vw 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  font-size: 1rem;
+  width: 100%;
+  background: rgb(168, 13, 13);
+}
+.Catalogue {
+  padding-top: 12vh;
+  margin: 0 1.8vw;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+
+.closeBtn {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  right: 0;
+  top: 30px;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+.Catalogue p {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid white;
+  height: 9.5vh;
+  font-size: 1.3rem;
+  color: white;
+  display: flex;
+  padding-right: 2.5vw; /* 아이콘과 텍스트 겹침 방지 */
+}
+
+.Catalogue p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 2vw;
+  transform: translateY(-50%);
+  width: 1.3vw;
+  height: 3vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M3.75 17V16.25H2.25V17H3.75ZM18.75 22.25C19.1642 22.25 19.5 21.9142 19.5 21.5C19.5 21.0858 19.1642 20.75 18.75 20.75V22.25ZM21.75 17V16.25H20.25V17H21.75ZM17.0303 13.0303L17.5607 12.5L16.5 11.4393L15.9697 11.9697L17.0303 13.0303ZM12 17L11.4697 17.5303L12 18.0607L12.5303 17.5303L12 17ZM8.03033 11.9697L7.5 11.4393L6.43934 12.5L6.96967 13.0303L8.03033 11.9697ZM12.75 3.5V2.75H11.25V3.5H12.75ZM3 21.5H2.25V22.25H3V21.5ZM21 21.5V22.25H21.75V21.5H21ZM21.75 19.25V17H20.25V19.25H21.75ZM15.9697 11.9697L11.4697 16.4697L12.5303 17.5303L17.0303 13.0303L15.9697 11.9697ZM12.5303 16.4697L8.03033 11.9697L6.96967 13.0303L11.4697 17.5303L12.5303 16.4697ZM12.75 17V3.5H11.25V17H12.75ZM2.25 17V18.125H3.75V17H2.25ZM2.25 18.125V19.25H3.75V18.125H2.25ZM2.25 19.25V21.5H3.75V19.25H2.25ZM3 22.25H5.25V20.75H3V22.25ZM20.25 19.25V21.5H21.75V19.25H20.25ZM5.25 22.25H18.5V20.75H5.25V22.25ZM18.5 22.25H18.75V20.75H18.5V22.25ZM21 20.75H18.5V22.25H21V20.75Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cata {
+  width: 10vw;
+  display: flex;
+  position: absolute;
+  transform: rotate(-90deg);
+}
+.rm2 {
+  padding: 3vw 0;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.3;
+  background: rgb(122, 122, 122);
+}
+
+nav {
+  z-index: 999;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  padding: 0 5vw 0 3vw;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.658);
+  height: 8.5vh;
+  transition: 0.3s ease-in-out;
+}
+nav.on {
+  background: rgba(255, 255, 255, 1);
+}
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.list {
+  padding-right: 6vw;
+  justify-content: right;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.listin {
+  position: relative;
+  display: flex;
+}
+.listinli {
+  border-bottom: 2px solid transparent;
+  word-break: keep-all;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.listinli > a {
+  font-weight: 450;
+  color: black;
+  padding: 0 1.5vw;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+.listinli > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(204, 6, 6);
+  transition: width 0.4s ease;
+}
+
+.listinli > a:hover::after {
+  width: 100%;
+}
+
+.listinul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8vw;
+  position: absolute;
+  top: 8.5vh;
+  left: 0;
+  width: 100%;
+  padding: 2.5vh;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.listinul.on {
+  z-index: 999;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+.listinul > li:hover a {
+  font-weight: 600;
+  color: rgb(204, 6, 6);
+}
+.right {
+  padding-right: 1vw;
+  gap: 1vw;
+  position: relative;
+  display: flex;
+}
+.right p {
+  position: relative;
+}
+.lang {
+  display: flex;
+  position: relative;
+  height: 100%;
+  font-size: 1.2rem;
+  width: 100px;
+}
+.lang a {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+#ko {
+  position: relative;
+}
+#ko::after {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 80%;
+  background-color: #ddd;
+  position: absolute;
+  right: 0;
+}
+.subBg {
+  position: fixed;
+  left: 0;
+  top: 8.5vh;
+  width: 100%;
+  height: 0;
+  background: #fff;
+  transition: 0.5s;
+  z-index: -99;
+}
+.subBg.on {
+  height: 31vh;
+}
+.banner {
+  position: relative;
+  z-index: -1;
+  transition: 0.3s;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  width: calc(100vw * 4);
+}
+.banner > div {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.bannerimg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.bannertxt {
+  border-radius: 10vw;
+  box-shadow: 0px 0px 70px 70px rgba(0, 0, 0, 0.137);
+  background: rgba(0, 0, 0, 0.137);
+  font-weight: 600;
+  position: absolute;
+  bottom: 25vh;
+  left: 20vw;
+  font-size: 3rem;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.bannertxt.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bg {
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 8.5vh;
+  left: 0;
+  width: auto;
+  height: 31vh;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bg.on {
+  opacity: 1;
+}
+
+.bannersec {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.bg > div {
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  display: flex;
+}
+.bg > div.on {
+  opacity: 1;
+}
+
+.bgimg img {
+  border-radius: 0.5vw;
+}
+.bgtxt {
+  width: 15vw;
+  word-break: keep-all;
+}
+/* 상단메뉴 */
+/* 하단고정메뉴 */
+
+.footer {
+  position: relative;
+  margin: 0 auto;
+  max-width: 90vw;
+  height: 35vh;
+}
+.footer > div {
+  display: flex;
+}
+.footer > div:first-child {
+  align-items: center;
+  position: relative;
+  padding-top: 8vh;
+}
+.footer > div:nth-child(2) {
+  font-weight: 600;
+  color: rgb(107, 107, 107);
+  height: 8vh;
+  align-items: center;
+  gap: 2vw;
+}
+
+.footer > div:nth-child(3) {
+  font-size: 0.9rem;
+  color: rgb(117, 117, 117);
+  border-top: 1px solid gray;
+  padding-top: 2vh;
+  gap: 1.5vh;
+}
+.footer > div:nth-child(3) div {
+  display: flex;
+  gap: 1vw;
+}
+.img {
+  width: 8vw;
+  position: relative;
+}
+.img img {
+  width: 100%;
+}
+.div3 {
+  flex-direction: column;
+  display: flex;
+}
+.div3in div {
+  display: flex;
+  position: relative;
+}
+
+/* 하단고정메뉴 */
+/* 메인페이지 */
+.bannertit {
+  max-width: 63vw;
+  margin: 0 auto;
+  padding: 140px 0 80px;
+  font-size: 28px;
+}
+.tit2 {
+  padding: 90px 0 80px;
+}
+.bannertit p {
+  color: rgb(177, 0, 0);
+  font-weight: 500;
+}
+
+/* ----------------------------- */
+/* 배너2 - 비즈니스 소개 */
+.banner2 {
+  margin-top: 1vh;
+  position: relative;
+}
+.banner2in {
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 100%;
+}
+.banner2boxs {
+  width: 100%;
+  height: 69vh;
+  border-top: 1px solid #b1b1b1;
+  border-bottom: 1px solid #b1b1b1;
+}
+.banner2box {
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.banner2box > div {
+  flex: 1;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.banner2boximg {
+  display: flex;
+}
+.banner2boximg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner2box > div h1 {
+  font-size: 35px;
+  padding: 20px 0;
+}
+.banner2box > div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: #b1b1b1;
+}
+.banner2box > div:first-child:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: #b1b1b1;
+}
+.banner2txt {
+  position: relative;
+  word-break: keep-all;
+  height: 100%;
+}
+.banner2txt::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' rx='18' fill='%23DDDDDD'/%3E%3Cpath d='M11.25 18.1132H24.75M24.75 18.1132L19.452 24M24.75 18.1132L19.452 12' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 0;
+  bottom: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.banner2bt {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* ----------------------------- */
+/* 배너3 - 제품 소개 */
+.banner3 {
+  margin-top: 80px;
+  height: 100vh;
+
+  position: relative;
+}
+.banner3in {
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 100%;
+}
+.banner3box {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.banner3box > div {
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: 0.1s ease-in-out;
+}
+.banner3box > div img {
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+.banner3box > div:hover img {
+  transform: scale(1.3);
+}
+.banner3box > div:hover {
+  border-color: rgb(145, 4, 4);
+}
+.banner3boxinbt {
+  position: absolute;
+  top: 0;
+  margin: 30px 0 0 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+}
+.banner3boxinbt::after {
+  content: "";
+  margin-right: 60px;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml, %3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' rx='18' fill='%23AA2D29'/%3E%3Cpath d='M11.25 18.1132H24.75M24.75 18.1132L19.452 24M24.75 18.1132L19.452 12' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.banner3down {
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 5px;
+  background: rgba(145, 4, 4, 0.842);
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: 0.5s ease;
+  box-shadow: 0 0 120px 120px rgba(145, 4, 4, 0.842);
+}
+.banner3down p {
+  padding: 30px 40px;
+  position: absolute;
+  bottom: 0;
+  word-break: keep-all;
+}
+.banner3box > div:hover .banner3down {
+  bottom: 0;
+}
+
+/* ----------------------------- */
+/* 배너4 - 뉴스 리스트 */
+.banner4in {
+  width: 100%;
+  height: 100%;
+}
+.banner4line,
+.banner4in ul li {
+  border-bottom: 1px solid #c2c2c2;
+}
+.banner4in ul li {
+  width: 100%;
+  position: relative;
+}
+.banner4in ul li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 8.5vh;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.banner4in ul li div p:first-child {
+  color: rgb(177, 0, 0);
+  font-weight: 600;
+}
+.banner4in ul li div p:nth-child(2) {
+  flex: 1;
+  margin-left: 6vw;
+}
+.banner4in ul li div p:last-child {
+  color: #9c9c9c;
+  font-weight: 600;
+}
+
+/* ----------------------------- */
+/* 배너5 - 비디오 */
+.banner5 {
+  overflow: visible;
+}
+.banner5box {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  border-top: 1px solid #c2c2c2;
+  border-bottom: 1px solid #c2c2c2;
+}
+.boxdiv1 {
+  flex-direction: column;
+  display: flex;
+  border-left: 1px solid #c2c2c2;
+  border-right: 1px solid #c2c2c2;
+  position: relative;
+  max-width: 63vw;
+  margin: 0 auto;
+  height: 100%;
+}
+.boxdiv1in1 {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.boxdiv1in1 > div {
+  gap: 12vw;
+
+  align-items: flex-end;
+  justify-content: space-between;
+  display: flex;
+  position: absolute;
+}
+.boxdiv1in1 > div > div {
+  font-size: 2rem;
+  position: relative;
+}
+.boxdiv1in1 > div > p {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  position: relative;
+}
+.boxdiv1in1 > div > div p {
+  font-weight: 500;
+}
+.boxdiv1in1 > div > div p:first-child {
+  font-weight: 600;
+  color: rgb(177, 0, 0);
+}
+.boxdiv1in1 > div > p::after {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' rx='18' fill='%23AA2D29'/%3E%3Cpath d='M11.25 18.1132H24.75M24.75 18.1132L19.452 24M24.75 18.1132L19.452 12' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.boxdiv1in1 video {
+  position: absolute;
+  top: -17vh;
+}
+.boxdiv1in2 {
+  background: white;
+  border-top: 1px solid #c2c2c2;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 10vh;
+}
+.boxdiv1in2 > div {
+  display: flex;
+  position: relative;
+  height: 100%;
+  flex: 1;
+}
+.boxdiv1in2 > div p {
+  padding: 0 3vw;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.boxdiv1in2 > div p::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M13.5 20L21 12.5M21 12.5L13.5 5M21 12.5H3' stroke='%231E1E1E' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.boxdiv1in2 > div:nth-child(2) {
+  border-left: 1px solid #c2c2c2;
+  border-right: 1px solid #c2c2c2;
+}
+/* 메인페이지 */
