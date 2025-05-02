@@ -4,19 +4,23 @@
   margin: 0;
   padding: 0;
 }
-
+section {
+  width: 100%;
+}
 html,
 body {
   height: 100%;
   font-family: Helvetica, Arial, sans-serif;
-  background: #eee;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
 .se1 {
   position: relative;
   overflow: hidden;
   height: 100vh;
-  width: 100%;
 }
 
 .mainSwiper {
@@ -106,39 +110,207 @@ body {
   cursor: url("./left.png"), auto; /* 쉼표 추가! */
   left: 0;
 }
-
-.black {
+/* //////////////////////////////////////////////// */
+.se2 {
   background: black;
-  position: absolute;
+  position: relative;
+  overflow: hidden;
+}
+.se2main {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   height: 100%;
+}
+.se2main > div {
+  justify-content: space-between;
+  display: flex;
+  padding: 90px;
+}
+.top {
+  font-weight: bold;
+  font-size: 2.7rem;
+  color: white;
+  flex-direction: column;
+  display: flex;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.bottom {
+  border-right: 1px solid #999;
+}
+/* ////////////////////////////////////////////// */
+
+.se3main img {
   width: 100%;
 }
-/* /////////////////////////////////////////////////// */
-/* 글자가 찍히는 박스 스타일 */
-#typewriter {
-  z-index: 999;
-  right: 0;
-  top: 0;
+.midline {
+  overflow: hidden;
+  background: white;
+  padding: 40px 0;
+}
+.se3 {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.se3main {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+.se3main > div:last-child {
+  border-top: 1px solid black;
+}
+.riline {
+  border-left: 1px solid black;
+}
+.se3main > div {
+  background: yellowgreen;
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+.se3main > div > div {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+.se3main > div > div > div {
+  display: flex;
+}
+.in > div {
+  position: relative;
+  width: 100%;
+  padding: 80px;
+}
+
+.box3 {
+  position: relative;
+  display: flex;
+}
+.box3 > div {
+  position: relative;
+  padding: 80px 0px 0px 80px !important;
+  flex-direction: column;
+  width: 100%;
+}
+.box3in1 h1 {
+  line-height: 60px;
+  font-size: 3rem;
+}
+.minibox {
+  justify-content: right;
+  width: 100%;
+  height: 100%;
+  padding: 12% 0% 5% 0%;
+  display: flex;
+}
+.minibox > div {
+  background: violet;
+  width: 40%;
+}
+.minibox {
+  background: yellow;
+}
+.minibox > div {
+  flex-direction: column;
+  display: flex;
+
+  height: 100%;
+}
+.h1 {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+.p p {
+  font-size: 1.2rem;
+  margin: 3px 0;
+}
+.hover-link {
+  font-size: 1.2rem;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  padding-top: 20px;
+}
+.box4 {
+  width: 100%;
+  position: relative;
+  background: violet;
+}
+.box4 > div {
+  flex: 1;
+  background: turquoise;
+}
+.box4 > div > div {
+  display: flex;
+  height: 100%;
+  position: relative;
+  flex: 1;
+  background: wheat;
+}
+.minibox2 {
+  background: yellow;
+}
+.me {
+  padding: 0% 0% 0% 20%;
+}
+/* /////////////////////////////////////////// */
+.thislogo {
+  align-items: flex-end;
+  display: flex;
+
+  overflow: hidden;
+  width: 16px;
+  height: 15px;
+}
+.qodef-btn-textual-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 16px;
+  stroke: currentColor;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+.hover-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  position: relative;
+}
+
+.line1 {
   position: absolute;
-  font-size: 48px; /* 글자 크기 */
-  font-weight: bold; /* 굵게 */
-  font-family: "Pretendard", sans-serif; /* 글꼴 */
-  color: white; /* 글자 색 */
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+.line2 {
+  transform: translate(-16px, 12px);
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
 }
 
-/* 깜빡이는 커서 효과 */
-#typewriter::after {
-  content: "|"; /* 커서 모양 */
-  animation: blink 1s infinite; /* 애니메이션 반복 */
+/* hover 시 */
+.hover-link:hover .qodef-btn-textual-icon {
+  transform: translate(16px, -12px); /* 대각선 위로 이동 */
 }
 
-/* 커서 깜빡임 애니메이션 정의 */
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+.hover-link:hover .line1 {
+}
+
+.hover-link:hover .line2 {
 }
