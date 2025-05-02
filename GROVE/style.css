@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #eee;
+}
+
+.se1 {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+.mainSwiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  bottom: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: transparent;
+  margin: 0 5px;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: white;
+}
+
+.smallSwiper {
+  color: white;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 200px;
+  z-index: 10;
+}
+.swiper-wrapper > div:nth-child(1) {
+  height: 100%;
+  width: 100%;
+}
+.swiper-wrapper > div:nth-child(2) {
+  height: 100%;
+  width: 100%;
+}
+.swiper-wrapper > div:nth-child(3) {
+  height: 100%;
+  width: 100%;
+}
+.swiper-wrapper > div:nth-child(4) {
+  height: 100%;
+  width: 100%;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.nextBtn,
+.prevBtn {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+.nextBtn {
+  cursor: url("./right.png"), auto; /* 쉼표 추가! */
+  right: 0;
+}
+
+.prevBtn {
+  cursor: url("./left.png"), auto; /* 쉼표 추가! */
+  left: 0;
+}
+
+.black {
+  background: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+/* /////////////////////////////////////////////////// */
+/* 글자가 찍히는 박스 스타일 */
+#typewriter {
+  z-index: 999;
+  right: 0;
+  top: 0;
+  position: absolute;
+  font-size: 48px; /* 글자 크기 */
+  font-weight: bold; /* 굵게 */
+  font-family: "Pretendard", sans-serif; /* 글꼴 */
+  color: white; /* 글자 색 */
+}
+
+/* 깜빡이는 커서 효과 */
+#typewriter::after {
+  content: "|"; /* 커서 모양 */
+  animation: blink 1s infinite; /* 애니메이션 반복 */
+}
+
+/* 커서 깜빡임 애니메이션 정의 */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

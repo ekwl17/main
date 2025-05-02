@@ -4,7 +4,6 @@ section {
   overflow: hidden;
   position: relative;
   height: 100vh;
-
 }
 .swiper {
   position: relative;
@@ -48,11 +47,11 @@ section {
 .swiper-controls {
   border: 1px solid white;
   border-radius: 3vh;
-  padding: 3px 15px;
+  padding: 8px 5px;
   position: relative;
   align-items: center;
   justify-content: space-between !important;
-  width: 190px;
+  width: 180px;
   background: rgba(0, 0, 0, 0.589);
   display: flex;
 }
@@ -67,8 +66,8 @@ section {
 .swbutton {
   justify-content: space-between;
   align-items: center;
-  height: 30px;
-  width: 85px;
+  height: 20px;
+  width: 150px;
   position: relative;
   display: flex;
 }
@@ -78,16 +77,15 @@ section {
   position: relative;
   margin-top: 0;
   top: 0;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-repeat: no-repeat;
-  background-size: contain;
   background-position: center;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  content: none; /* 기본 아이콘 제거 */
+  content: none !important; /* 기본 아이콘 제거 */
 }
 
 .swiper-button-prev {
