@@ -190,7 +190,9 @@ a {
   width: 100%;
   padding: 80px;
 }
-
+.box2 > div {
+  flex-direction: column;
+}
 .box3 {
   position: relative;
   display: flex;
@@ -222,15 +224,17 @@ a {
 .minibox > div {
   flex-direction: column;
   display: flex;
-
   height: 100%;
 }
 .h1 {
   font-size: 1.5rem;
-  padding-bottom: 20px;
+}
+.p {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .p p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 3px 0;
 }
 .hover-link {
@@ -238,7 +242,6 @@ a {
   align-items: center;
   width: 100%;
   display: flex;
-  padding-top: 20px;
 }
 .box4 {
   width: 100%;
