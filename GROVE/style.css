@@ -129,11 +129,11 @@ a {
   width: 100%;
 }
 .top > div {
+  position: relative;
   width: 50%;
   display: flex;
 }
 .toping1 {
-  display: flex;
   background: bisque;
   padding: 0px 0px 0px 80px;
 }
@@ -141,8 +141,11 @@ a {
   width: 100%;
 }
 .toping2 {
-  background: yellow;
+  justify-content: center;
+  align-items: center;
   display: flex;
+  width: 35%;
+  background: yellow;
 }
 .bottom {
   flex: 1;
