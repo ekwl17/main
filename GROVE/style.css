@@ -118,31 +118,73 @@ a {
   overflow: hidden;
 }
 .se2main {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 100%;
-}
-.se2main > div {
-  justify-content: space-between;
   display: flex;
-  padding: 90px;
+  flex-direction: column;
+  width: 100%;
 }
 .top {
-  font-weight: bold;
-  font-size: 2.7rem;
+  flex: 1;
   color: white;
-  flex-direction: column;
   display: flex;
-  border-right: 1px solid #999;
-  border-bottom: 1px solid #999;
-  grid-column: 1;
-  grid-row: 1;
+  width: 100%;
+}
+.top > div {
+  width: 50%;
+  display: flex;
+}
+.toping1 {
+  display: flex;
+  background: bisque;
+  padding: 0px 0px 0px 80px;
+}
+.toping1 img {
+  width: 100%;
+}
+.toping2 {
+  background: yellow;
+  display: flex;
+}
+.bottom {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+.bottom > div {
+  padding: 90px 0px 100px 0px;
+  width: 50%;
+  display: flex;
+}
+.bottoming4 {
+  width: 35%;
+  justify-content: center;
+  align-items: center;
+  background: beige;
+  display: flex;
 }
 
-.bottom {
-  border-right: 1px solid #999;
+.bottoming5 {
+  width: 100%;
+  background: blueviolet;
+  position: relative;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.bottoming5 > div {
+  padding: 90px 80px 100px 0px;
+}
+.bottoming5 img {
+  width: 100%;
+}
+.ing {
+  border: 1px solid;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+img {
+  object-fit: contain;
 }
 /* ////////////////////////////////////////////// */
 
