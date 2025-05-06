@@ -118,12 +118,16 @@ a {
   overflow: hidden;
 }
 .se2main {
+  height: 150vh;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+.topingtxt {
+  font-size: 2.5rem;
+}
 .top {
-  flex: 1;
+  height: 50%;
   color: white;
   display: flex;
   width: 100%;
@@ -134,7 +138,6 @@ a {
   display: flex;
 }
 .toping1 {
-  background: bisque;
   padding: 0px 0px 0px 80px;
 }
 .toping1 img {
@@ -145,10 +148,16 @@ a {
   align-items: center;
   display: flex;
   width: 35%;
-  background: yellow;
+}
+.topingtxt {
+  padding: 0% 0% 0% 12%;
+}
+.topingtxtbox {
+  padding: 5% 0% 23% 0%;
 }
 .bottom {
-  flex: 1;
+  overflow: hidden;
+  height: 50%;
   display: flex;
   width: 100%;
 }
@@ -161,13 +170,11 @@ a {
   width: 35%;
   justify-content: center;
   align-items: center;
-  background: beige;
   display: flex;
 }
 
 .bottoming5 {
   width: 100%;
-  background: blueviolet;
   position: relative;
   display: flex;
   align-content: center;
@@ -180,7 +187,6 @@ a {
   width: 100%;
 }
 .ing {
-  border: 1px solid;
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -218,7 +224,6 @@ img {
   border-left: 1px solid black;
 }
 .se3main > div {
-  background: yellowgreen;
   position: relative;
   flex: 1;
   display: flex;
@@ -251,22 +256,25 @@ img {
 }
 .box3in1 h1 {
   line-height: 60px;
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 .minibox {
   justify-content: right;
+
   width: 100%;
-  height: 100%;
-  padding: 12% 0% 5% 0%;
+  padding: 12%0% 5% 0%;
   display: flex;
 }
-.minibox > div {
-  background: violet;
+
+.minibox > div:first-child {
+  width: 35%;
+}
+.minibox > div:last-child {
+  margin-right: 30px;
+
   width: 40%;
 }
-.minibox {
-  background: yellow;
-}
+
 .minibox > div {
   flex-direction: column;
   display: flex;
@@ -282,8 +290,9 @@ img {
 }
 .p p {
   font-size: 1.1rem;
-  margin: 3px 0;
+  margin: 2vh 0;
 }
+
 .hover-link {
   font-size: 1.2rem;
   align-items: center;
@@ -293,23 +302,21 @@ img {
 .box4 {
   width: 100%;
   position: relative;
-  background: violet;
 }
 .box4 > div {
   flex: 1;
-  background: turquoise;
 }
 .box4 > div > div {
+  width: 50%;
+
   display: flex;
   height: 100%;
   position: relative;
-  flex: 1;
-  background: wheat;
 }
-.minibox2 {
-  background: yellow;
-}
-.me {
+
+.me p {
+  align-items: center;
+  display: flex;
   padding: 0% 0% 0% 20%;
 }
 /* /////////////////////////////////////////// */
@@ -357,9 +364,107 @@ img {
 .hover-link:hover .qodef-btn-textual-icon {
   transform: translate(16px, -12px); /* 대각선 위로 이동 */
 }
-
-.hover-link:hover .line1 {
+/* /////////////////////////////////////////// */
+.se4 {
+  color: white;
+  background: black;
+  display: flex;
+  width: 100%;
+  position: relative;
+  padding: 100px 0px 140px 0px;
+}
+.se4 h1 {
+  font-weight: 500;
+}
+.se4main {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.hover-link:hover .line2 {
+.se4main > div {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+
+.se4main > div > div {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+
+.se4main > div > div > div {
+  display: flex;
+}
+
+.se4main img {
+  width: 100%;
+}
+
+.se4mainin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.se4top {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.se4top > div {
+  flex: 1;
+}
+
+.se4top > div p {
+  position: relative;
+  width: 100%;
+}
+
+.se4top > div img {
+  width: 100%;
+}
+
+.se4tople {
+  display: flex;
+}
+
+.se4tople > div {
+  flex: 1;
+  border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+  margin: 0 0 60px;
+}
+
+.se4topri {
+  align-items: flex-end;
+  display: flex;
+  margin: 0 0 60px;
+}
+.se4topri > div {
+  padding: 0 60px;
+}
+.se4bottom {
+  display: flex;
+  width: 100%;
+}
+
+.se4bottom > div {
+  border-left: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+}
+
+.se4bottom > div:first-child {
+  border-left: none;
+}
+.se4txts {
+  margin-top: 24px;
 }
