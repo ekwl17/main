@@ -73,15 +73,48 @@ updateWidth(current);
 
 // 3초마다 순환
 setInterval(() => {
+  // transition 잠깐 꺼줌
+  liItems.forEach((li) => li.classList.add("no-transition"));
+
   current++;
   if (current === liItems.length - 1) {
+    updateSpans(current);
+    updateWidth(current);
     setTimeout(() => {
-      wordList.style.opacity = "0";
       current = 0;
       updateSpans(0);
       updateWidth(0);
-    }, 600);
+    }, 10); // 600ms 대신 짧게 순간이동
+  } else {
+    updateSpans(current);
+    updateWidth(current);
   }
-  updateSpans(current);
-  updateWidth(current);
+
+  // 다음 프레임에서 다시 transition 살림
+  requestAnimationFrame(() => {
+    liItems.forEach((li) => li.classList.remove("no-transition"));
+  });
 }, 3000);
+
+gsap.registerPlugin(SplitText);
+
+console.clear();
+
+document.fonts.ready.then(() => {
+  gsap.set(".split", { opacity: 1 });
+
+  const split = SplitText.create(".split", {
+    type: "words",
+    wordsClass: "word++",
+    wordDelimiter: String.fromCharCode(8205),
+  });
+
+  gsap.from(split.words, {
+    y: -100,
+    opacity: 0,
+    rotation: "random(-60, 60)",
+    stagger: 0.1,
+    duration: 1,
+    ease: "back",
+  });
+});
