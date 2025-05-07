@@ -118,10 +118,10 @@ a {
   overflow: hidden;
 }
 .se2main {
-  height: 150vh;
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 120vh;
 }
 .topingtxt {
   font-size: 2.5rem;
@@ -133,9 +133,14 @@ a {
   width: 100%;
 }
 .top > div {
+  border-right: 1px solid white;
+
   position: relative;
   width: 50%;
   display: flex;
+}
+.top > div:first-child {
+  border-bottom: 1px solid white;
 }
 .toping1 {
   padding: 0px 0px 0px 80px;
@@ -157,11 +162,11 @@ a {
 }
 .bottom {
   overflow: hidden;
-  height: 50%;
   display: flex;
   width: 100%;
 }
 .bottom > div {
+  border-right: 1px solid white;
   padding: 90px 0px 100px 0px;
   width: 50%;
   display: flex;
