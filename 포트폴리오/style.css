@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+/* 폰트 적용 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap");
+
+html,
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+blockquote,
+pre,
+code,
+address,
+ul,
+ol,
+li,
+menu,
+nav,
+section,
+article,
+aside,
+dl,
+dt,
+dd,
+table,
+thead,
+tbody,
+tfoot,
+label,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+hr,
+input,
+button,
+textarea,
+object,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+main,
+header,
+section,
+nav,
+footer,
+aside,
+article,
+figure {
+  display: block;
+}
+
+html {
+  -webkit-touch-callout: none;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+  background: url(https://manggury.github.io/images/patten01.png);
+  overflow-x: hidden; /* 반응형 */
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong,
+th {
+  font-weight: normal;
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 10000;
+}
+.header .logo {
+  padding: 15px;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+}
+
+/* 페이지 앵커 */
+#pageMenu {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 80px;
+  z-index: 999;
+}
+#pageMenu li {
+  margin: 5px 0;
+}
+#pageMenu a {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: right;
+  padding-right: 20px;
+}
+#pageMenu a span {
+  color: #fff;
+  font-size: 0px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  line-height: 30px;
+  display: inline-block;
+}
+#pageMenu.on a span {
+  color: #fff;
+}
+#pageMenu a i {
+  display: inline-block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #d5d5d5;
+  border-radius: 50%;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+#pageMenu a i::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 17px;
+  height: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+#pageMenu li.active a span {
+  font-size: 13px;
+}
+#pageMenu li.active a i::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 17px;
+  height: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* 페이지 */
+.section {
+  height: 100vh;
+}
+#section1 .section-inner1 {
+  display: flex;
+  width: fit-content;
+  background: turquoise;
+}
+#section1 {
+}
+#section2 {
+}
+#section3 {
+}
+#section4 {
+}
+#section5 {
+}
+#section6 {
+}
+section .section-inner {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+}
+section .section-inner > div {
+}
+
+.section3div {
+  display: flex;
+  background: wheat;
+  height: 800px;
+  width: 100%;
+}
+.section3div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+/* ///////////////////////////////////////////////////////////// */
+.banner {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  font-weight: bold;
+  font-size: 12rem;
+}
+.bannerin {
+  position: relative;
+  display: flex;
+  height: 20vh;
+}
+.left {
+  transition: width 0.3s ease;
+}
+.left {
+  overflow: hidden;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: lightblue; /* 확인용 */
+}
+
+.right {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  background: violet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wordList {
+  height: 20vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#wordList li {
+  position: relative;
+  align-items: center;
+  height: 20vh;
+  display: flex;
+  width: 430px;
+
+}
+
+#wordList li span {
+  transition: 0.3s ease-in;
+}
+#wordList li span.on1 {
+  display: block;
+  transform: translateY(0vh);
+}
+#wordList li span.on2 {
+  transform: translateY(-20vh);
+}
+#wordList li span.on3 {
+  transform: translateY(-40vh);
+}
+#wordList li span.on4 {
+  transform: translateY(-60vh);
+}
