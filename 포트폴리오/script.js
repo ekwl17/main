@@ -84,13 +84,13 @@ setInterval(() => {
       current = 0;
       updateSpans(0);
       updateWidth(0);
-    }, 10); // 600ms 대신 짧게 순간이동
+    }, 10); 
   } else {
     updateSpans(current);
     updateWidth(current);
   }
 
-  // 다음 프레임에서 다시 transition 살림
+ 
   requestAnimationFrame(() => {
     liItems.forEach((li) => li.classList.remove("no-transition"));
   });

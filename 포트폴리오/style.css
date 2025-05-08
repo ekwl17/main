@@ -264,14 +264,13 @@ section .section-inner > div {
   display: flex;
   align-items: center;
   height: 100%;
-  background: lightblue; /* 확인용 */
 }
 
 .right {
   position: relative;
   height: 100%;
   flex: 1;
-  background: violet;
+
   display: flex;
   align-items: center;
   justify-content: center;
