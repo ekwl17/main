@@ -121,10 +121,11 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 120vh;
+  height: 110vh;
 }
 .topingtxt {
-  font-size: 2.5rem;
+  font-weight: 500;
+  font-size: 3rem;
 }
 .top {
   height: 50%;
@@ -205,11 +206,25 @@ img {
 .se3main img {
   width: 100%;
 }
+.midli {
+  overflow: hidden;
+  width: 100%;
+}
 .midline {
   overflow: hidden;
   background: white;
   padding: 40px 0;
 }
+.midline1 > div {
+  padding: 0;
+  display: flex;
+}
+.midline1 {
+  width: 200%;
+  font-size: 3.5rem;
+  display: flex;
+}
+
 .se3 {
   display: flex;
   width: 100%;
@@ -383,7 +398,7 @@ img {
 }
 .se4main {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1850px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -440,7 +455,7 @@ img {
 
 .se4tople > div {
   flex: 1;
-  border-right: 1px solid white;
+  border-right: 1px solid rgb(131, 131, 131);
   display: flex;
   flex-direction: column;
   padding: 0 60px;
@@ -461,7 +476,7 @@ img {
 }
 
 .se4bottom > div {
-  border-left: 1px solid white;
+  border-right: 1px solid rgb(131, 131, 131);
   display: flex;
   flex-direction: column;
   padding: 0 60px;

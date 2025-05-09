@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* 상단메뉴 */
 * {
+  font-family: "Pretendard";
   margin: 0;
   padding: 0;
 }
