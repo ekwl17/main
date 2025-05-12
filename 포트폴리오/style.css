@@ -48,6 +48,9 @@ body {
 
 /* ──────────── 헤더 ──────────── */
 .header {
+  z-index: 1;
+  background-color: white;
+  background-image: url(./img/patten01.png);
   position: fixed;
   top: 0;
   left: 0;
@@ -57,6 +60,7 @@ body {
   padding: 15px;
   font-size: 25px;
   color: black;
+
   text-align: center;
 }
 
@@ -64,7 +68,7 @@ body {
 #pageMenu {
   position: fixed;
   right: 40px;
-  top: 50%;
+  top: 15%;
   transform: translate(0, -50%);
   width: 80px;
   z-index: 999;
@@ -91,7 +95,7 @@ body {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #d5d5d5;
+  background: rgb(191, 221, 255);
   border-radius: 50%;
   top: 50%;
   right: 0;
@@ -106,7 +110,7 @@ body {
   transform: translate(-50%, -50%);
   width: 17px;
   height: 17px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgb(17, 128, 255);
   border-radius: 50%;
   opacity: 0;
   transition: all 0.3s;
@@ -159,11 +163,95 @@ body {
   display: flex;
 }
 .me1 {
+  margin-left: 5vw;
   flex: 1;
   justify-content: center;
 }
 .me2 {
   width: 60%;
+}
+
+.my {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.my > div:first-child {
+  background: whitesmoke;
+  height: 100%;
+  width: 40%;
+}
+.my > div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+.myrightbox {
+  position: relative;
+  display: flex;
+  width: 55vw;
+  height: 80vh;
+  border: 1px solid rgb(44, 44, 44);
+}
+.myrightbox > div {
+  color: rgb(44, 44, 44);
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 7vh 6vw;
+}
+.mytxt1 {
+  font-weight: bold;
+  font-size: 4.5rem;
+}
+.mytxt2 {
+  padding: 3vh 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.mytxt3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.profile {
+  border-top: 5px solid rgb(142, 195, 255);
+  margin-top: 4.5vh;
+  justify-content: center;
+  width: 25vw;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+.profile li {
+  border-bottom: 1px solid rgb(197, 197, 197);
+  padding: 1vh 0;
+  height: 3.5vh;
+  font-size: 1.2rem;
+  display: flex;
+}
+.profile li p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 5vw;
+  border-right: 1.5px solid rgb(142, 195, 255);
+}
+.profile li p:last-child {
+  margin-left: 1vw;
+}
+.myline {
+  color: black;
+  font-size: 2rem;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .innerri {
@@ -241,6 +329,7 @@ body {
 
 /* ──────────── 배너 텍스트 슬라이드 ──────────── */
 .banner {
+  color: rgb(44, 44, 44);
   display: flex;
   height: 100%;
   position: absolute;
@@ -248,12 +337,13 @@ body {
   font-size: 10vw;
 }
 .bannerin {
+  margin-bottom: 10vh;
   color: black;
   justify-content: center;
   width: 100%;
   position: relative;
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .left {
@@ -307,9 +397,8 @@ body {
 .container {
   z-index: 1;
   color: black;
-  background: whitesmoke;
   bottom: 30%;
-  right: 20%;
+  right: 15%;
   position: absolute;
   display: flex;
   align-items: center;
@@ -319,12 +408,16 @@ body {
   overflow: hidden;
 }
 .split {
+  color: rgb(44, 44, 44);
   width: 100%;
   display: flex;
   font-weight: bold;
   font-size: 2rem;
 }
-.split span {
+.split span > div {
+  padding: 0.5vh 1vw;
+  border-radius: 0.5vw;
+  border: 3px dotted;
   margin-right: 1vw;
 }
 
@@ -352,27 +445,54 @@ body {
 }
 .ph1 {
   z-index: 1;
-  height: 500px;
-  width: 500px;
+  height: 460px;
+  width: auto;
   top: 20%;
-  left: 5%;
+  left: 13%;
 }
 .ph2 {
   z-index: 1;
   height: 450px;
-  width: 350px;
-  top: 40%;
+  width: 320px;
+  top: 45%;
   right: 0;
 }
 .ph3 {
   height: 600px;
-  width: 700px;
+  width: 720px;
   top: 30%;
   right: 8%;
 }
 .phone img {
   object-fit: contain;
   width: 100%;
+}
+#pageMenu {
+  right: 0.5vw;
+}
+#pageMenu a {
+  width: 2.3vw;
+  display: flex;
+  justify-content: center;
+  border-radius: 1vh;
+}
+
+#pageMenu li.active a span {
+  font-size: 13px;
+  opacity: 1;
+}
+#pageMenu a span {
+  background: rgba(142, 195, 255, 0.548);
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  width: 2.3vw;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 0.5vw;
+  font-family: "Montserrat";
+  font-weight: bold;
+  line-height: 30px;
+  display: inline-block;
 }
 .section.active .ani-01 {
   animation: fadeLeft 0.5s 0.5s both;
