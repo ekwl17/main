@@ -148,7 +148,7 @@ nav.on {
 }
 
 .list {
-  padding-right: 6vw;
+  padding-right: 3vw;
   justify-content: right;
   display: flex;
   height: 100%;
@@ -161,7 +161,7 @@ nav.on {
 .listinli {
   border-bottom: 2px solid transparent;
   word-break: keep-all;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   width: 100%;
@@ -193,12 +193,12 @@ nav.on {
 
 .listinul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.8vw;
   position: absolute;
   top: 8.5vh;
   left: 0;
-  width: 100%;
+  width: 110%;
   padding: 2.5vh;
   opacity: 0;
   transform: translateY(10px);
