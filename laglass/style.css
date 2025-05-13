@@ -233,7 +233,7 @@ nav.on {
   font-size: 1.2rem;
   width: 100px;
 }
-.lang a {
+t.lang a {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -288,6 +288,7 @@ nav.on {
   overflow: hidden;
 }
 .bannertxt {
+  line-height: 10vh;
   border-radius: 10vw;
   box-shadow: 0px 0px 70px 70px rgba(0, 0, 0, 0.137);
   background: rgba(0, 0, 0, 0.137);
@@ -344,6 +345,7 @@ nav.on {
   border-radius: 0.5vw;
 }
 .bgtxt {
+  line-height: 3vh;
   width: 15vw;
   word-break: keep-all;
 }

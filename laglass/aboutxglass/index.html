@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="/laglass/aboutxglass/style.css" />
   </head>
 
   <body>
@@ -483,81 +482,82 @@
       </div>
     </div>
   </body>
-</html>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const menuItems = document.querySelectorAll(".menu2 p");
-    const spanItems = document.querySelectorAll(".menu2 p span");
-    const contentBoxes = document.querySelectorAll(".boxs > div");
 
-    const clearActive = () => {
-      contentBoxes.forEach((box) => box.classList.remove("on"));
-      spanItems.forEach((span) => span.classList.remove("on"));
-    };
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const menuItems = document.querySelectorAll(".menu2 p");
+      const spanItems = document.querySelectorAll(".menu2 p span");
+      const contentBoxes = document.querySelectorAll(".boxs > div");
 
-    const setActive = (index) => {
-      contentBoxes[index]?.classList.add("on");
-      spanItems[index]?.classList.add("on");
-    };
+      const clearActive = () => {
+        contentBoxes.forEach((box) => box.classList.remove("on"));
+        spanItems.forEach((span) => span.classList.remove("on"));
+      };
 
-    // 첫 번째 항목 기본 표시
-    setActive(0);
+      const setActive = (index) => {
+        contentBoxes[index]?.classList.add("on");
+        spanItems[index]?.classList.add("on");
+      };
 
-    menuItems.forEach((item, index) => {
-      item.addEventListener("click", () => {
-        clearActive();
-        setActive(index);
+      // 첫 번째 항목 기본 표시
+      setActive(0);
+
+      menuItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          clearActive();
+          setActive(index);
+        });
       });
+
+      initMenuScript(); // 👉 여기가 핵심 추가
     });
 
-    initMenuScript(); // 👉 여기가 핵심 추가
-  });
+    function initMenuScript() {
+      const menuItems = document.querySelectorAll(".listinli");
+      const submenus = document.querySelectorAll(".listinul");
+      const bg = document.querySelector(".bg");
+      const bgDiv = document.querySelectorAll(".bg > div");
+      const nav = document.querySelector("nav");
+      const subBg = document.querySelector(".subBg");
+      const rightmenus = document.querySelector(".rightmenus");
+      const rm = document.querySelector(".rm");
+      const closeBtn = document.querySelector(".closeBtn");
 
-  function initMenuScript() {
-    const menuItems = document.querySelectorAll(".listinli");
-    const submenus = document.querySelectorAll(".listinul");
-    const bg = document.querySelector(".bg");
-    const bgDiv = document.querySelectorAll(".bg > div");
-    const nav = document.querySelector("nav");
-    const subBg = document.querySelector(".subBg");
-    const rightmenus = document.querySelector(".rightmenus");
-    const rm = document.querySelector(".rm");
-    const closeBtn = document.querySelector(".closeBtn");
+      if (!menuItems.length || !nav || !rightmenus) return;
 
-    if (!menuItems.length || !nav || !rightmenus) return;
+      let closeTimer;
 
-    let closeTimer;
+      function closeAllSub() {
+        submenus.forEach((v) => v.classList.remove("on"));
+        bgDiv.forEach((v) => v.classList.remove("on"));
+        subBg.classList.remove("on");
+        nav.classList.remove("on");
+        bg.classList.remove("on");
+      }
 
-    function closeAllSub() {
-      submenus.forEach((v) => v.classList.remove("on"));
-      bgDiv.forEach((v) => v.classList.remove("on"));
-      subBg.classList.remove("on");
-      nav.classList.remove("on");
-      bg.classList.remove("on");
+      rm?.addEventListener("click", () => {
+        rightmenus.classList.toggle("on");
+      });
+
+      closeBtn?.addEventListener("click", () => {
+        rightmenus.classList.remove("on");
+      });
+
+      menuItems.forEach((item, idx) => {
+        item.addEventListener("mouseenter", () => {
+          clearTimeout(closeTimer);
+          closeAllSub();
+          item.querySelector(".listinul")?.classList.add("on");
+          subBg.classList.add("on");
+          nav.classList.add("on");
+          bg.classList.add("on");
+          bgDiv[idx]?.classList.add("on");
+        });
+      });
+
+      nav.addEventListener("mouseleave", () => {
+        closeTimer = setTimeout(closeAllSub, 100);
+      });
     }
-
-    rm?.addEventListener("click", () => {
-      rightmenus.classList.toggle("on");
-    });
-
-    closeBtn?.addEventListener("click", () => {
-      rightmenus.classList.remove("on");
-    });
-
-    menuItems.forEach((item, idx) => {
-      item.addEventListener("mouseenter", () => {
-        clearTimeout(closeTimer);
-        closeAllSub();
-        item.querySelector(".listinul")?.classList.add("on");
-        subBg.classList.add("on");
-        nav.classList.add("on");
-        bg.classList.add("on");
-        bgDiv[idx]?.classList.add("on");
-      });
-    });
-
-    nav.addEventListener("mouseleave", () => {
-      closeTimer = setTimeout(closeAllSub, 100);
-    });
-  }
-</script>
+  </script>
+</html>
