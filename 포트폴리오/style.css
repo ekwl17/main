@@ -169,15 +169,23 @@ body {
 .me2 {
   width: 60%;
 }
-
+.meimg1 {
+  z-index: 1;
+}
+.meimg2 {
+  transform: rotate(-10deg);
+  top: 20%;
+  left: 10%;
+  position: absolute;
+}
 .my {
   justify-content: center;
   align-items: center;
   display: flex;
 }
 .my > div:first-child {
-  background: whitesmoke;
-  height: 100%;
+  background: rgba(212, 252, 255, 0.596);
+  height: 90%;
   width: 40%;
 }
 .my > div:last-child {
@@ -188,7 +196,15 @@ body {
   width: 100%;
   flex: 1;
 }
-
+.myleftbox {
+  position: relative;
+  justify-content: right;
+  align-items: flex-end;
+  display: flex;
+}
+.myleftbox img {
+  width: 20vw;
+}
 .myrightbox {
   position: relative;
   display: flex;
@@ -398,6 +414,7 @@ body {
   color: black;
   bottom: 30%;
   right: 15%;
+
   position: absolute;
   display: flex;
   align-items: center;
@@ -407,17 +424,24 @@ body {
   overflow: hidden;
 }
 .split {
+  gap: 1.5vw;
   color: rgb(44, 44, 44);
   width: 100%;
   display: flex;
   font-weight: bold;
   font-size: 2rem;
 }
-.split span > div {
-  padding: 0.5vh 1vw;
+.split p {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 3px dotted rgb(44, 44, 44);
+  padding: 0.2vh 1vw 0.5vh;
   border-radius: 0.5vw;
-  border: 3px dotted;
   margin-right: 1vw;
+}
+.split p span {
+  display: flex;
 }
 
 /* ──────────── 애니메이션 ──────────── */
